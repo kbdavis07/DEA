@@ -6,8 +6,8 @@ namespace Discord.Rpc
 {
     public class UserVoiceProperties
     {
-        [JsonProperty("userId")]
-        internal ulong UserId { get; set; }
+        [JsonProperty("userid")]
+        internal ulong userid { get; set; }
         [JsonProperty("pan")]
         public Optional<Pan> Pan { get; set; }
         [JsonProperty("volume")]

@@ -62,23 +62,23 @@ namespace Discord.Commands
                         return PreconditionResult.FromError("You must be in a gang to use this command.");
                     break;
                 case Attributes.Jump:
-                    if (dbUser.Cash < guild.JumpRequirement)
+                    if (dbUser.cash < guild.JumpRequirement)
                         return PreconditionResult.FromError($"You do not have the permission to use this command.\nRequired cash: {guild.JumpRequirement.ToString("C", Config.CI)}.");
                     break;
                 case Attributes.Steal:
-                    if (dbUser.Cash < guild.StealRequirement)
+                    if (dbUser.cash < guild.StealRequirement)
                         return PreconditionResult.FromError($"You do not have the permission to use this command.\nRequired cash: {guild.StealRequirement.ToString("C", Config.CI)}.");
                     break;
                 case Attributes.Bully:
-                    if (dbUser.Cash < guild.BullyRequirement)
+                    if (dbUser.cash < guild.BullyRequirement)
                         return PreconditionResult.FromError($"You do not have the permission to use this command.\nRequired cash: {guild.BullyRequirement.ToString("C", Config.CI)}.");
                     break;
                 case Attributes.Rob:
-                    if (dbUser.Cash < guild.RobRequirement)
+                    if (dbUser.cash < guild.RobRequirement)
                         return PreconditionResult.FromError($"You do not have the permission to use this command.\nRequired cash: {guild.RobRequirement.ToString("C", Config.CI)}.");
                     break;
                 case Attributes.FiftyX2:
-                    if (dbUser.Cash < guild.FiftyX2Requirement)
+                    if (dbUser.cash < guild.FiftyX2Requirement)
                         return PreconditionResult.FromError($"You do not have the permission to use this command.\nRequired cash: {guild.FiftyX2Requirement.ToString("C", Config.CI)}.");
                     break;
                 default:

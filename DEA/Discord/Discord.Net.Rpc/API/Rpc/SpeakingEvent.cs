@@ -6,6 +6,6 @@ namespace Discord.API.Rpc
     internal class SpeakingEvent
     {
         [JsonProperty("user_id")]
-        public ulong UserId { get; set; }
+        public ulong userid { get; set; }
     }
 }

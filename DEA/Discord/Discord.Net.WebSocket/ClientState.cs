@@ -46,10 +46,10 @@ namespace Discord.WebSocket
                 return channel;
             return null;
         }
-        internal SocketDMChannel GetDMChannel(ulong userId)
+        internal SocketDMChannel GetDMChannel(ulong userid)
         {
             SocketDMChannel channel;
-            if (_dmChannels.TryGetValue(userId, out channel))
+            if (_dmChannels.TryGetValue(userid, out channel))
                 return channel;
             return null;
         }

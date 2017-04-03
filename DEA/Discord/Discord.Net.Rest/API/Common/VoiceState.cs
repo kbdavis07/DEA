@@ -10,7 +10,7 @@ namespace Discord.API
         [JsonProperty("channel_id")]
         public ulong? ChannelId { get; set; }
         [JsonProperty("user_id")]
-        public ulong UserId { get; set; }
+        public ulong userid { get; set; }
         [JsonProperty("session_id")]
         public string SessionId { get; set; }
         [JsonProperty("deaf")]

@@ -19,9 +19,9 @@ namespace DEA.DAL.Repository
             await BaseRepository<gang>.UpdateAsync(gang);
         }
 
-        public static async Task ModifyAsync(Func<gang, Task> function, ulong userId, ulong guildId)
+        public static async Task ModifyAsync(Func<gang, Task> function, ulong userid, ulong guildId)
         {
-            var gang = await FetchGangAsync(userId, guildId);
+            var gang = await FetchGangAsync(userid, guildId);
             await function(gang);
             await BaseRepository<gang>.UpdateAsync(gang);
         }
@@ -34,9 +34,9 @@ namespace DEA.DAL.Repository
             return gang;
         }
 
-        public static async Task<gang> FetchGangAsync(ulong userId, ulong guildId)
+        public static async Task<gang> FetchGangAsync(ulong userid, ulong guildId)
         {
-            var gang = await BaseRepository<gang>.SearchFor(c => (c.leaderid == (decimal)userId || c.users.Any(x => x.id == (decimal)userId)) && c.guildid == (decimal)guildId).FirstOrDefaultAsync();
+            var gang = await BaseRepository<gang>.SearchFor(c => (c.leaderid == (decimal)userid || c.users.Any(x => x.id == (decimal)userid)) && c.guildid == (decimal)guildId).FirstOrDefaultAsync();
 
             if (gang == null) throw new Exception("This user is not in a gang.");
             return gang;
@@ -73,28 +73,28 @@ namespace DEA.DAL.Repository
             return CreatedGang;
         }
 
-        public static async Task<gang> DestroyGangAsync(ulong userId, ulong guildId)
+        public static async Task<gang> DestroyGangAsync(ulong userid, ulong guildId)
         {
-            var gang = await FetchGangAsync(userId, guildId);
+            var gang = await FetchGangAsync(userid, guildId);
             await BaseRepository<gang>.DeleteAsync(gang);
             return gang;
         }
 
-        public static async Task<bool> InGangAsync(ulong userId, ulong guildId)
+        public static async Task<bool> InGangAsync(ulong userid, ulong guildId)
         {
-            return await BaseRepository<gang>.SearchFor(c => (c.leaderid == (decimal)userId || c.users.Any(x => x.id == (decimal)userId)) && c.guildid == (decimal)guildId).AnyAsync();
+            return await BaseRepository<gang>.SearchFor(c => (c.leaderid == (decimal)userid || c.users.Any(x => x.id == (decimal)userid)) && c.guildid == (decimal)guildId).AnyAsync();
         }
 
-        public static async Task<bool> IsMemberOfAsync(ulong memberId, ulong guildId, ulong userId)
+        public static async Task<bool> IsMemberOfAsync(ulong memberId, ulong guildId, ulong userid)
         {
             var gang = await FetchGangAsync(memberId, guildId);
-            if (gang.leaderid == (decimal)userId || gang.users.Any(x => x.id == (decimal)userId)) return true;
+            if (gang.leaderid == (decimal)userid || gang.users.Any(x => x.id == (decimal)userid)) return true;
             return false;
         }
 
-        //public static async Task<bool> IsFullAsync(ulong userId, ulong guildId)
+        //public static async Task<bool> IsFullAsync(ulong userid, ulong guildId)
         //{
-        //    var gang = await FetchGangAsync(userId, guildId);
+        //    var gang = await FetchGangAsync(userid, guildId);
 
         //    if (gang.users.Length == 4) return true;
         //    return false;
@@ -109,9 +109,9 @@ namespace DEA.DAL.Repository
         //    await BaseRepository<Gang>.UpdateAsync(gang);
         //}
 
-        //public static async Task AddMemberAsync(ulong userId, ulong guildId, ulong newMemberId)
+        //public static async Task AddMemberAsync(ulong userid, ulong guildId, ulong newMemberId)
         //{
-        //    var gang = await FetchGangAsync(userId, guildId);
+        //    var gang = await FetchGangAsync(userid, guildId);
         //    for (int i = 0; i < gang.Members.Length; i++)
         //    {
         //        if (gang.Members[i] == 0)

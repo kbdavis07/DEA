@@ -85,10 +85,10 @@ namespace Discord.Audio
             LatencyUpdated += async (old, val) => await _audioLogger.DebugAsync($"Latency = {val} ms").ConfigureAwait(false);
         }
 
-        internal async Task StartAsync(string url, ulong userId, string sessionId, string token) 
+        internal async Task StartAsync(string url, ulong userid, string sessionId, string token) 
         {
             _url = url;
-            _userId = userId;
+            _userId = userid;
             _sessionId = sessionId;
             _token = token;
             await _connection.StartAsync().ConfigureAwait(false);
@@ -169,15 +169,15 @@ namespace Discord.Audio
                 throw new ArgumentException("Value must be 120, 240, 480, 960, 1920 or 2880", nameof(samplesPerFrame));
         }
 
-        internal async Task CreateInputStreamAsync(ulong userId)
+        internal async Task CreateInputStreamAsync(ulong userid)
         {
             //Assume Thread-safe
-            if (!_streams.ContainsKey(userId))
+            if (!_streams.ContainsKey(userid))
             {
                 var readerStream = new InputStream();
                 var writerStream = new OpusDecodeStream(new RTPReadStream(readerStream, _secretKey));
-                _streams.TryAdd(userId, new StreamPair(readerStream, writerStream));
-                await _streamCreatedEvent.InvokeAsync(userId, readerStream);
+                _streams.TryAdd(userid, new StreamPair(readerStream, writerStream));
+                await _streamCreatedEvent.InvokeAsync(userid, readerStream);
             }
         }
         internal AudioInStream GetInputStream(ulong id)
@@ -187,11 +187,11 @@ namespace Discord.Audio
                 return streamPair.Reader;
             return null;
         }
-        internal async Task RemoveInputStreamAsync(ulong userId)
+        internal async Task RemoveInputStreamAsync(ulong userid)
         {
-            if (_streams.TryRemove(userId, out var pair))
+            if (_streams.TryRemove(userid, out var pair))
             {
-                await _streamDestroyedEvent.InvokeAsync(userId).ConfigureAwait(false);
+                await _streamDestroyedEvent.InvokeAsync(userid).ConfigureAwait(false);
                 pair.Reader.Dispose();
             }
         }
@@ -264,9 +264,9 @@ namespace Discord.Audio
                             await _audioLogger.DebugAsync("Received Speaking").ConfigureAwait(false);
 
                             var data = (payload as JToken).ToObject<SpeakingEvent>(_serializer);
-                            _ssrcMap[data.Ssrc] = data.UserId; //TODO: Memory Leak: SSRCs are never cleaned up
+                            _ssrcMap[data.Ssrc] = data.userid; //TODO: Memory Leak: SSRCs are never cleaned up
 
-                            await _speakingUpdatedEvent.InvokeAsync(data.UserId, data.Speaking);
+                            await _speakingUpdatedEvent.InvokeAsync(data.userid, data.Speaking);
                         }
                         break;
                     default:
@@ -308,7 +308,7 @@ namespace Discord.Audio
             else if (_connection.State == ConnectionState.Connected)
             {
                 uint ssrc;
-                ulong userId;
+                ulong userid;
                 StreamPair pair;
 
                 if (!RTPReadStream.TryReadSsrc(packet, 0, out ssrc))
@@ -316,14 +316,14 @@ namespace Discord.Audio
                     await _audioLogger.DebugAsync($"Malformed Frame").ConfigureAwait(false);
                     return;
                 }
-                if (!_ssrcMap.TryGetValue(ssrc, out userId))
+                if (!_ssrcMap.TryGetValue(ssrc, out userid))
                 {
                     await _audioLogger.DebugAsync($"Unknown SSRC {ssrc}").ConfigureAwait(false);
                     return;
                 }
-                if (!_streams.TryGetValue(userId, out pair))
+                if (!_streams.TryGetValue(userid, out pair))
                 {
-                    await _audioLogger.DebugAsync($"Unknown User {userId}").ConfigureAwait(false);
+                    await _audioLogger.DebugAsync($"Unknown User {userid}").ConfigureAwait(false);
                     return;
                 }
                 try
@@ -335,7 +335,7 @@ namespace Discord.Audio
                     await _audioLogger.DebugAsync($"Malformed Frame", ex).ConfigureAwait(false);
                     return;
                 }
-                await _audioLogger.DebugAsync($"Received {packet.Length} bytes from user {userId}").ConfigureAwait(false);
+                await _audioLogger.DebugAsync($"Received {packet.Length} bytes from user {userid}").ConfigureAwait(false);
             }
         }
 

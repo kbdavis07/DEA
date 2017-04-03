@@ -5,7 +5,7 @@ namespace Discord.API.Gateway
     internal class Reaction
     {
         [JsonProperty("user_id")]
-        public ulong UserId { get; set; }
+        public ulong userid { get; set; }
         [JsonProperty("message_id")]
         public ulong MessageId { get; set; }
         [JsonProperty("channel_id")]

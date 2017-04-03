@@ -153,7 +153,7 @@ namespace Discord.WebSocket
         {
             var voiceChannel = state.GetChannel(model.ChannelId.Value) as SocketVoiceChannel;
             var voiceState = SocketVoiceState.Create(voiceChannel, model);
-            _voiceStates[model.UserId] = voiceState;
+            _voiceStates[model.userid] = voiceState;
             return voiceState;
         }
         internal SocketVoiceState? GetVoiceState(ulong id)

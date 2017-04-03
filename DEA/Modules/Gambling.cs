@@ -55,19 +55,19 @@ namespace DEA.Modules
             if (Context.Guild.GetTextChannel(guild.GambleId) != null && Context.Channel.Id != guild.GambleId)
                 throw new Exception($"You may only gamble in {Context.Guild.GetTextChannel(guild.GambleId).Mention}!");
             if (bet < Config.BET_MIN) throw new Exception($"Lowest bet is {Config.BET_MIN}$.");
-            if (bet > user.Cash) throw new Exception($"You do not have enough money. Balance: {user.Cash.ToString("C", Config.CI)}.");
+            if (bet > user.cash) throw new Exception($"You do not have enough money. Balance: {user.cash.ToString("C", Config.CI)}.");
             int roll = new Random().Next(1, 101);
             if (roll >= odds)
             {
                 await UserRepository.EditCashAsync(Context, (bet * payoutMultiplier));
                 await ReplyAsync($"{Context.User.Mention}, you rolled: {roll}. Congratulations, you just won {(bet * payoutMultiplier).ToString("C", Config.CI)}! " +
-                                 $"Balance: {user.Cash.ToString("C", Config.CI)}.");
+                                 $"Balance: {user.cash.ToString("C", Config.CI)}.");
             }
             else
             {
                 await UserRepository.EditCashAsync(Context, -bet);
                 await ReplyAsync($"{Context.User.Mention}, you rolled {roll}. Unfortunately, you lost {bet.ToString("C", Config.CI)}. " +
-                                 $"Balance: {user.Cash.ToString("C", Config.CI)}.");
+                                 $"Balance: {user.cash.ToString("C", Config.CI)}.");
             }
         }
     }

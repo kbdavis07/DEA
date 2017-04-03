@@ -369,10 +369,10 @@ namespace Discord.API
             options = RequestOptions.CreateOrClone(options);
             await SendRpcAsync<API.Rpc.VoiceSettings>("SET_VOICE_SETTINGS", settings, options: options).ConfigureAwait(false);
         }
-        public async Task SetUserVoiceSettingsAsync(ulong userId, API.Rpc.UserVoiceSettings settings, RequestOptions options = null)
+        public async Task SetUserVoiceSettingsAsync(ulong userid, API.Rpc.UserVoiceSettings settings, RequestOptions options = null)
         {
             options = RequestOptions.CreateOrClone(options);
-            settings.UserId = userId;
+            settings.userid = userid;
             await SendRpcAsync<API.Rpc.UserVoiceSettings>("SET_USER_VOICE_SETTINGS", settings, options: options).ConfigureAwait(false);
         }
 

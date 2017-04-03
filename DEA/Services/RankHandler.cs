@@ -10,11 +10,11 @@ namespace DEA
 {
     public static class RankHandler
     {
-        public static async Task Handle(IGuild guild, ulong userId)
+        public static async Task Handle(IGuild guild, ulong userid)
         {
             if (!((await guild.GetCurrentUserAsync()).GuildPermissions.ManageRoles)) return;
-            double cash = (await UserRepository.FetchUserAsync(userId, guild.Id)).cash;
-            var user = await guild.GetUserAsync(userId); //FETCHES THE USER
+            double cash = (await UserRepository.FetchUserAsync(userid, guild.Id)).cash;
+            var user = await guild.GetUserAsync(userid); //FETCHES THE USER
             var currentUser = await guild.GetCurrentUserAsync() as SocketGuildUser; //FETCHES THE BOT'S USER
             var guildData = await GuildRepository.FetchGuildAsync(guild.Id);
             List<IRole> rolesToAdd = new List<IRole>();

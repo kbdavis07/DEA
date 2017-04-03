@@ -6,7 +6,7 @@ namespace Discord.API.Voice
     internal class SpeakingEvent
     {
         [JsonProperty("user_id")]
-        public ulong UserId { get; set; }
+        public ulong userid { get; set; }
         [JsonProperty("ssrc")]
         public uint Ssrc { get; set; }
         [JsonProperty("speaking")]

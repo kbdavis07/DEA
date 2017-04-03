@@ -43,7 +43,7 @@ namespace DEA.Modules
         [Summary("Sets the rate of any user.")]
         public async Task SetRate(IGuildUser user, double rate)
         {
-            await UserRepository.ModifyAsync(x => { x.TemporaryMultiplier = rate; return Task.CompletedTask; }, Context);
+            await UserRepository.ModifyAsync(x => { x.temporarymultiplier = rate; return Task.CompletedTask; }, Context);
             await ReplyAsync($"Successfully set {user}'s rate to {rate.ToString("C", Config.CI)}");
         }
     }

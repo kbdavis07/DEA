@@ -9,7 +9,7 @@ namespace DEA.Models
        
         public int Id { get; set; }
        
-        public ulong UserId { get; set; }
+        public ulong userid { get; set; }
        
         //Foreign key back to the guild
         public ulong GuildId { get; set; }
@@ -18,7 +18,7 @@ namespace DEA.Models
        
         public double Cash { get; set; } = 0.0;
         
-        public double TemporaryMultiplier { get; set; } = 1.0;
+        public double temporarymultiplier { get; set; } = 1.0;
         
         public double InvestmentMultiplier { get; set; } = 1.0;
         

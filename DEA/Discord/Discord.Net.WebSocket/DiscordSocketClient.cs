@@ -1217,7 +1217,7 @@ namespace Discord.WebSocket
                                     {
                                         SocketUserMessage cachedMsg = channel.GetCachedMessage(data.MessageId) as SocketUserMessage;
                                         bool isCached = cachedMsg != null;
-                                        var user = await channel.GetUserAsync(data.UserId, CacheMode.CacheOnly);
+                                        var user = await channel.GetUserAsync(data.userid, CacheMode.CacheOnly);
                                         SocketReaction reaction = SocketReaction.Create(data, channel, cachedMsg, Optional.Create(user));
                                         var cacheable = new Cacheable<IUserMessage, ulong>(cachedMsg, data.MessageId, isCached, async () => await channel.GetMessageAsync(data.MessageId) as IUserMessage);
 
@@ -1242,7 +1242,7 @@ namespace Discord.WebSocket
                                     {
                                         SocketUserMessage cachedMsg = channel.GetCachedMessage(data.MessageId) as SocketUserMessage;
                                         bool isCached = cachedMsg != null;
-                                        var user = await channel.GetUserAsync(data.UserId, CacheMode.CacheOnly);
+                                        var user = await channel.GetUserAsync(data.userid, CacheMode.CacheOnly);
                                         SocketReaction reaction = SocketReaction.Create(data, channel, cachedMsg, Optional.Create(user));
                                         var cacheable = new Cacheable<IUserMessage, ulong>(cachedMsg, data.MessageId, isCached, async () => await channel.GetMessageAsync(data.MessageId) as IUserMessage);
 
@@ -1380,7 +1380,7 @@ namespace Discord.WebSocket
                                             return;
                                         }
 
-                                        var user = (channel as SocketChannel).GetUser(data.UserId);
+                                        var user = (channel as SocketChannel).GetUser(data.userid);
                                         if (user != null)
                                             await TimedInvokeAsync(_userIsTypingEvent, nameof(UserIsTyping), user, channel).ConfigureAwait(false);
                                     }
@@ -1431,23 +1431,23 @@ namespace Discord.WebSocket
 
                                         if (data.ChannelId != null)
                                         {
-                                            before = guild.GetVoiceState(data.UserId)?.Clone() ?? SocketVoiceState.Default;
+                                            before = guild.GetVoiceState(data.userid)?.Clone() ?? SocketVoiceState.Default;
                                             after = await guild.AddOrUpdateVoiceStateAsync(State, data).ConfigureAwait(false);
-                                            /*if (data.UserId == CurrentUser.Id)
+                                            /*if (data.userid == CurrentUser.Id)
                                             {
                                                 var _ = guild.FinishJoinAudioChannel().ConfigureAwait(false);
                                             }*/
                                         }
                                         else
                                         {
-                                            before = guild.RemoveVoiceState(data.UserId) ?? SocketVoiceState.Default;
+                                            before = guild.RemoveVoiceState(data.userid) ?? SocketVoiceState.Default;
                                             after = SocketVoiceState.Create(null, data);
                                         }
 
-                                        user = guild.GetUser(data.UserId);
+                                        user = guild.GetUser(data.userid);
                                         if (user == null)
                                         {
-                                            await UnknownGuildUserAsync(type, data.UserId, guild.Id).ConfigureAwait(false);
+                                            await UnknownGuildUserAsync(type, data.userid, guild.Id).ConfigureAwait(false);
                                             return;
                                         }
                                     }
@@ -1461,18 +1461,18 @@ namespace Discord.WebSocket
                                         }
                                         if (data.ChannelId != null)
                                         {
-                                            before = groupChannel.GetVoiceState(data.UserId)?.Clone() ?? SocketVoiceState.Default;
+                                            before = groupChannel.GetVoiceState(data.userid)?.Clone() ?? SocketVoiceState.Default;
                                             after = groupChannel.AddOrUpdateVoiceState(State, data);
                                         }
                                         else
                                         {
-                                            before = groupChannel.RemoveVoiceState(data.UserId) ?? SocketVoiceState.Default;
+                                            before = groupChannel.RemoveVoiceState(data.userid) ?? SocketVoiceState.Default;
                                             after = SocketVoiceState.Create(null, data);
                                         }
-                                        user = groupChannel.GetUser(data.UserId);
+                                        user = groupChannel.GetUser(data.userid);
                                         if (user == null)
                                         {
-                                            await UnknownChannelUserAsync(type, data.UserId, groupChannel.Id).ConfigureAwait(false);
+                                            await UnknownChannelUserAsync(type, data.userid, groupChannel.Id).ConfigureAwait(false);
                                             return;
                                         }
                                     }
@@ -1743,24 +1743,24 @@ namespace Discord.WebSocket
             }
         }
 
-        private async Task UnknownGlobalUserAsync(string evnt, ulong userId)
+        private async Task UnknownGlobalUserAsync(string evnt, ulong userid)
         {
-            var details = $"{evnt} User={userId}";
+            var details = $"{evnt} User={userid}";
             await _gatewayLogger.WarningAsync($"Unknown User ({details}).").ConfigureAwait(false);
         }
-        private async Task UnknownChannelUserAsync(string evnt, ulong userId, ulong channelId)
+        private async Task UnknownChannelUserAsync(string evnt, ulong userid, ulong channelId)
         {
-            var details = $"{evnt} User={userId} Channel={channelId}";
+            var details = $"{evnt} User={userid} Channel={channelId}";
             await _gatewayLogger.WarningAsync($"Unknown User ({details}).").ConfigureAwait(false);
         }
-        private async Task UnknownGuildUserAsync(string evnt, ulong userId, ulong guildId)
+        private async Task UnknownGuildUserAsync(string evnt, ulong userid, ulong guildId)
         {
-            var details = $"{evnt} User={userId} Guild={guildId}";
+            var details = $"{evnt} User={userid} Guild={guildId}";
             await _gatewayLogger.WarningAsync($"Unknown User ({details}).").ConfigureAwait(false);
         }
-        private async Task IncompleteGuildUserAsync(string evnt, ulong userId, ulong guildId)
+        private async Task IncompleteGuildUserAsync(string evnt, ulong userid, ulong guildId)
         {
-            var details = $"{evnt} User={userId} Guild={guildId}";
+            var details = $"{evnt} User={userid} Guild={guildId}";
             await _gatewayLogger.DebugAsync($"User has not been downloaded ({details}).").ConfigureAwait(false);
         }
         private async Task UnknownChannelAsync(string evnt, ulong channelId)

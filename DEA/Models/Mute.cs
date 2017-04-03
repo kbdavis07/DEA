@@ -10,7 +10,7 @@ namespace DEA.Models
        
         public int Id { get; set; }
         
-        public ulong UserId { get; set; }
+        public ulong userid { get; set; }
        
         //Foreign key back to the guild
         public ulong GuildId { get; set; }

@@ -139,13 +139,13 @@ namespace Discord.Rest
 
         public Task AddBanAsync(IUser user, int pruneDays = 0, RequestOptions options = null)
             => GuildHelper.AddBanAsync(this, Discord, user.Id, pruneDays, options);
-        public Task AddBanAsync(ulong userId, int pruneDays = 0, RequestOptions options = null)
-            => GuildHelper.AddBanAsync(this, Discord, userId, pruneDays, options);
+        public Task AddBanAsync(ulong userid, int pruneDays = 0, RequestOptions options = null)
+            => GuildHelper.AddBanAsync(this, Discord, userid, pruneDays, options);
 
         public Task RemoveBanAsync(IUser user, RequestOptions options = null)
             => GuildHelper.RemoveBanAsync(this, Discord, user.Id, options);
-        public Task RemoveBanAsync(ulong userId, RequestOptions options = null)
-            => GuildHelper.RemoveBanAsync(this, Discord, userId, options);
+        public Task RemoveBanAsync(ulong userid, RequestOptions options = null)
+            => GuildHelper.RemoveBanAsync(this, Discord, userid, options);
 
         //Channels
         public Task<IReadOnlyCollection<RestGuildChannel>> GetChannelsAsync(RequestOptions options = null)

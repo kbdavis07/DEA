@@ -32,9 +32,9 @@ namespace Discord.Rpc
         public bool IsSelfMuted => (_voiceStates & Flags.SelfMuted) != 0;
         public bool IsSelfDeafened => (_voiceStates & Flags.SelfDeafened) != 0;
 
-        internal RpcVoiceState(DiscordRpcClient discord, ulong userId)
+        internal RpcVoiceState(DiscordRpcClient discord, ulong userid)
         {
-            User = new RpcUser(discord, userId);
+            User = new RpcUser(discord, userid);
         }
         internal static RpcVoiceState Create(DiscordRpcClient discord, Model model)
         {

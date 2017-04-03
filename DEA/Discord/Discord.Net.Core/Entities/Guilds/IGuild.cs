@@ -67,11 +67,11 @@ namespace Discord
         /// <summary> Bans the provided user from this guild and optionally prunes their recent messages. </summary>
         Task AddBanAsync(IUser user, int pruneDays = 0, RequestOptions options = null);
         /// <summary> Bans the provided user id from this guild and optionally prunes their recent messages. </summary>
-        Task AddBanAsync(ulong userId, int pruneDays = 0, RequestOptions options = null);
+        Task AddBanAsync(ulong userid, int pruneDays = 0, RequestOptions options = null);
         /// <summary> Unbans the provided user if it is currently banned. </summary>
         Task RemoveBanAsync(IUser user, RequestOptions options = null);
         /// <summary> Unbans the provided user id if it is currently banned. </summary>
-        Task RemoveBanAsync(ulong userId, RequestOptions options = null);
+        Task RemoveBanAsync(ulong userid, RequestOptions options = null);
 
         /// <summary> Gets a collection of all channels in this guild. </summary>
         Task<IReadOnlyCollection<IGuildChannel>> GetChannelsAsync(CacheMode mode = CacheMode.AllowDownload, RequestOptions options = null);

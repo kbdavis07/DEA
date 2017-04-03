@@ -107,15 +107,15 @@ namespace Discord.Rest
         }
 
         public static async Task AddBanAsync(IGuild guild, BaseDiscordClient client,
-            ulong userId, int pruneDays, RequestOptions options)
+            ulong userid, int pruneDays, RequestOptions options)
         {
             var args = new CreateGuildBanParams { DeleteMessageDays = pruneDays };
-            await client.ApiClient.CreateGuildBanAsync(guild.Id, userId, args, options).ConfigureAwait(false);
+            await client.ApiClient.CreateGuildBanAsync(guild.Id, userid, args, options).ConfigureAwait(false);
         }
         public static async Task RemoveBanAsync(IGuild guild, BaseDiscordClient client,
-            ulong userId, RequestOptions options)
+            ulong userid, RequestOptions options)
         {
-            await client.ApiClient.RemoveGuildBanAsync(guild.Id, userId, options).ConfigureAwait(false);
+            await client.ApiClient.RemoveGuildBanAsync(guild.Id, userid, options).ConfigureAwait(false);
         }
 
         //Channels

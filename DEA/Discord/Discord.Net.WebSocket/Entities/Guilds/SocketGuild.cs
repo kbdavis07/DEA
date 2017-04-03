@@ -180,7 +180,7 @@ namespace Discord.WebSocket
                     if (model.VoiceStates[i].ChannelId.HasValue)
                         channel = state.GetChannel(model.VoiceStates[i].ChannelId.Value) as SocketVoiceChannel;
                     var voiceState = SocketVoiceState.Create(channel, model.VoiceStates[i]);
-                    voiceStates.TryAdd(model.VoiceStates[i].UserId, voiceState);
+                    voiceStates.TryAdd(model.VoiceStates[i].userid, voiceState);
                 }
             }
             _voiceStates = voiceStates;
@@ -292,13 +292,13 @@ namespace Discord.WebSocket
 
         public Task AddBanAsync(IUser user, int pruneDays = 0, RequestOptions options = null)
             => GuildHelper.AddBanAsync(this, Discord, user.Id, pruneDays, options);
-        public Task AddBanAsync(ulong userId, int pruneDays = 0, RequestOptions options = null)
-            => GuildHelper.AddBanAsync(this, Discord, userId, pruneDays, options);
+        public Task AddBanAsync(ulong userid, int pruneDays = 0, RequestOptions options = null)
+            => GuildHelper.AddBanAsync(this, Discord, userid, pruneDays, options);
 
         public Task RemoveBanAsync(IUser user, RequestOptions options = null)
             => GuildHelper.RemoveBanAsync(this, Discord, user.Id, options);
-        public Task RemoveBanAsync(ulong userId, RequestOptions options = null)
-            => GuildHelper.RemoveBanAsync(this, Discord, userId, options);
+        public Task RemoveBanAsync(ulong userid, RequestOptions options = null)
+            => GuildHelper.RemoveBanAsync(this, Discord, userid, options);
 
         //Channels
         public SocketGuildChannel GetChannel(ulong id)
@@ -440,13 +440,13 @@ namespace Discord.WebSocket
         internal async Task<SocketVoiceState> AddOrUpdateVoiceStateAsync(ClientState state, VoiceStateModel model)
         {
             var voiceChannel = state.GetChannel(model.ChannelId.Value) as SocketVoiceChannel;
-            var before = GetVoiceState(model.UserId) ?? SocketVoiceState.Default;
+            var before = GetVoiceState(model.userid) ?? SocketVoiceState.Default;
             var after = SocketVoiceState.Create(voiceChannel, model);
-            _voiceStates[model.UserId] = after;
+            _voiceStates[model.userid] = after;
 
             if (_audioClient != null && before.VoiceChannel?.Id != after.VoiceChannel?.Id)
             {
-                if (model.UserId == CurrentUser.Id)
+                if (model.userid == CurrentUser.Id)
                 {
                     if (after.VoiceChannel != null && _audioClient.ChannelId != after.VoiceChannel?.Id)
                     {
@@ -456,9 +456,9 @@ namespace Discord.WebSocket
                 }
                 else
                 {
-                    await _audioClient.RemoveInputStreamAsync(model.UserId).ConfigureAwait(false); //User changed channels, end their stream
+                    await _audioClient.RemoveInputStreamAsync(model.userid).ConfigureAwait(false); //User changed channels, end their stream
                     if (CurrentUser.VoiceChannel != null && after.VoiceChannel?.Id == CurrentUser.VoiceChannel?.Id)
-                        await _audioClient.CreateInputStreamAsync(model.UserId).ConfigureAwait(false);
+                        await _audioClient.CreateInputStreamAsync(model.userid).ConfigureAwait(false);
                 }
             }
 
@@ -480,9 +480,9 @@ namespace Discord.WebSocket
         }
 
         //Audio
-        internal AudioInStream GetAudioStream(ulong userId)
+        internal AudioInStream GetAudioStream(ulong userid)
         {
-            return _audioClient?.GetInputStream(userId);
+            return _audioClient?.GetInputStream(userid);
         }
         internal async Task<IAudioClient> ConnectAudioAsync(ulong channelId, bool selfDeaf, bool selfMute, Action<IAudioClient> configAction)
         {

@@ -25,7 +25,7 @@ namespace Discord
             throw new ArgumentException("Invalid mention format", nameof(text));
         }
         /// <summary> Tries to parse a provided user mention string. </summary>
-        public static bool TryParseUser(string text, out ulong userId)
+        public static bool TryParseUser(string text, out ulong userid)
         {
             if (text.Length >= 3 && text[0] == '<' && text[1] == '@' && text[text.Length - 1] == '>')
             {
@@ -34,10 +34,10 @@ namespace Discord
                 else
                     text = text.Substring(2, text.Length - 3); //<@123>
                 
-                if (ulong.TryParse(text, NumberStyles.None, CultureInfo.InvariantCulture, out userId))
+                if (ulong.TryParse(text, NumberStyles.None, CultureInfo.InvariantCulture, out userid))
                     return true;
             }
-            userId = 0;
+            userid = 0;
             return false;
         }
 

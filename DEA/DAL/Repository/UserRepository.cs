@@ -19,9 +19,9 @@ namespace DEA.DAL.Repository
             await BaseRepository<user>.UpdateAsync(user);
         }
 
-        public static async Task ModifyAsync(Func<user, Task> function, ulong userId, ulong guildId)
+        public static async Task ModifyAsync(Func<user, Task> function, ulong userid, ulong guildId)
         {
-            var user = await FetchUserAsync(userId, guildId);
+            var user = await FetchUserAsync(userid, guildId);
             await function(user);
             await BaseRepository<user>.UpdateAsync(user);
         }
@@ -42,14 +42,14 @@ namespace DEA.DAL.Repository
             return ExistingUser;
         }
 
-        public static async Task<user> FetchUserAsync(ulong userId, ulong guildId)
+        public static async Task<user> FetchUserAsync(ulong userid, ulong guildId)
         {
-            user ExistingUser = await BaseRepository<user>.SearchFor(c => c.userid == userId && c.guildid == guildId).FirstOrDefaultAsync();
+            user ExistingUser = await BaseRepository<user>.SearchFor(c => c.userid == userid && c.guildid == guildId).FirstOrDefaultAsync();
             if (ExistingUser == null)
             {
                 var CreatedUser = new user()
                 {
-                    userid = userId,
+                    userid = userid,
                     guildid = guildId
                 };
                 await BaseRepository<user>.InsertAsync(CreatedUser);
@@ -72,12 +72,12 @@ namespace DEA.DAL.Repository
             await RankHandler.Handle(context.Guild, context.User.Id);
         }
 
-        public static async Task EditCashAsync(SocketCommandContext context, ulong userId, double change)
+        public static async Task EditCashAsync(SocketCommandContext context, ulong userid, double change)
         {
-            var user = await FetchUserAsync(userId, context.Guild.Id);
+            var user = await FetchUserAsync(userid, context.Guild.Id);
             user.cash = Math.Round(user.cash + change, 2);
             await BaseRepository<user>.UpdateAsync(user);
-            await RankHandler.Handle(context.Guild, userId);
+            await RankHandler.Handle(context.Guild, userid);
         }
 
         public static async Task<List<user>> AllAsync()

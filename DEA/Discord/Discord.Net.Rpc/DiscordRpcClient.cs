@@ -226,7 +226,7 @@ namespace Discord.Rpc
 
             await ApiClient.SetVoiceSettingsAsync(model, options).ConfigureAwait(false);
         }
-        public async Task SetUserVoiceSettingsAsync(ulong userId, Action<UserVoiceProperties> func, RequestOptions options = null)
+        public async Task SetUserVoiceSettingsAsync(ulong userid, Action<UserVoiceProperties> func, RequestOptions options = null)
         {
             if (func == null) throw new NullReferenceException(nameof(func));
 
@@ -236,12 +236,12 @@ namespace Discord.Rpc
             var model = new API.Rpc.UserVoiceSettings
             {
                 Mute = settings.Mute,
-                UserId = settings.UserId,
+                userid = settings.userid,
                 Volume = settings.Volume
             };
             if (settings.Pan.IsSpecified)
                 model.Pan = settings.Pan.Value.ToModel();
-            await ApiClient.SetUserVoiceSettingsAsync(userId, model, options).ConfigureAwait(false);
+            await ApiClient.SetUserVoiceSettingsAsync(userid, model, options).ConfigureAwait(false);
         }
 
         private static string GetEventName(RpcGlobalEvent rpcEvent)
@@ -397,7 +397,7 @@ namespace Discord.Rpc
                                     await _rpcLogger.DebugAsync("Received Dispatch (SPEAKING_START)").ConfigureAwait(false);
                                     var data = (payload.Value as JToken).ToObject<SpeakingEvent>(_serializer);
 
-                                    await _speakingStartedEvent.InvokeAsync(data.UserId).ConfigureAwait(false);
+                                    await _speakingStartedEvent.InvokeAsync(data.userid).ConfigureAwait(false);
                                 }
                                 break;
                             case "SPEAKING_STOP":
@@ -405,7 +405,7 @@ namespace Discord.Rpc
                                     await _rpcLogger.DebugAsync("Received Dispatch (SPEAKING_STOP)").ConfigureAwait(false);
                                     var data = (payload.Value as JToken).ToObject<SpeakingEvent>(_serializer);
 
-                                    await _speakingStoppedEvent.InvokeAsync(data.UserId).ConfigureAwait(false);
+                                    await _speakingStoppedEvent.InvokeAsync(data.userid).ConfigureAwait(false);
                                 }
                                 break;
                             case "VOICE_SETTINGS_UPDATE":

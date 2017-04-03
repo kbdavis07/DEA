@@ -128,12 +128,12 @@ namespace Discord.Audio
         {
             await SendAsync(VoiceOpCode.Heartbeat, DateTimeUtils.ToUnixMilliseconds(DateTimeOffset.UtcNow), options: options).ConfigureAwait(false);
         }
-        public async Task SendIdentityAsync(ulong userId, string sessionId, string token)
+        public async Task SendIdentityAsync(ulong userid, string sessionId, string token)
         {
             await SendAsync(VoiceOpCode.Identify, new IdentifyParams
             {
                 GuildId = GuildId,
-                UserId = userId,
+                userid = userid,
                 SessionId = sessionId,
                 Token = token
             }).ConfigureAwait(false);

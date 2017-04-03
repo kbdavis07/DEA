@@ -6,7 +6,7 @@ namespace Discord.API.Rpc
     internal class SetLocalVolumeResponse
     {
         [JsonProperty("user_id")]
-        public ulong UserId { get; set; }
+        public ulong userid { get; set; }
         [JsonProperty("volume")]
         public int Volume { get; set; }
     }

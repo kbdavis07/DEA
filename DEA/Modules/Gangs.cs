@@ -19,8 +19,8 @@ namespace DEA.Modules
         public async Task ResetCooldowns([Remainder] string name)
         {
             var user = await UserRepository.FetchUserAsync(Context);
-            if (user.Cash < Config.GANG_CREATION_COST)
-                throw new Exception($"You do not have {Config.GANG_CREATION_COST.ToString("C", Config.CI)}. Balance: {user.Cash.ToString("C", Config.CI)}.");
+            if (user.cash < Config.GANG_CREATION_COST)
+                throw new Exception($"You do not have {Config.GANG_CREATION_COST.ToString("C", Config.CI)}. Balance: {user.cash.ToString("C", Config.CI)}.");
             var gang = await GangRepository.CreateGangAsync(Context.User.Id, Context.Guild.Id, name);
             await UserRepository.EditCashAsync(Context, -Config.GANG_CREATION_COST);
             await ReplyAsync($"{Context.User.Mention}, You have successfully created the {gang.Name} gang!");
@@ -166,8 +166,8 @@ namespace DEA.Modules
         public async Task ChangeGangName([Remainder] string name)
         {
             var user = await UserRepository.FetchUserAsync(Context);
-            if (user.Cash < Config.GANG_NAME_CHANGE_COST)
-                throw new Exception($"You do not have {Config.GANG_NAME_CHANGE_COST.ToString("C", Config.CI)}. Balance: {user.Cash.ToString("C", Config.CI)}.");
+            if (user.cash < Config.GANG_NAME_CHANGE_COST)
+                throw new Exception($"You do not have {Config.GANG_NAME_CHANGE_COST.ToString("C", Config.CI)}. Balance: {user.cash.ToString("C", Config.CI)}.");
             if ((await GangRepository.AllAsync(Context.Guild.Id)).Any(x => x.Name == name)) throw new Exception($"There is already a gang by the name {name}.");
             await UserRepository.EditCashAsync(Context, -Config.GANG_NAME_CHANGE_COST);
             await GangRepository.ModifyAsync(x => { x.Name = name; return Task.CompletedTask; }, Context.User.Id, Context.Guild.Id);
@@ -197,7 +197,7 @@ namespace DEA.Modules
         {
             var user = await UserRepository.FetchUserAsync(Context);
             if (cash < Config.MIN_DEPOSIT) throw new Exception($"The lowest deposit is {Config.MIN_DEPOSIT.ToString("C", Config.CI)}.");
-            if (user.Cash < cash) throw new Exception($"You do not have enough money. Balance: {user.Cash.ToString("C", Config.CI)}.");
+            if (user.cash < cash) throw new Exception($"You do not have enough money. Balance: {user.cash.ToString("C", Config.CI)}.");
             await UserRepository.EditCashAsync(Context, -cash);
             await GangRepository.ModifyAsync(x => { x.Wealth += cash; return Task.CompletedTask; }, Context.User.Id, Context.Guild.Id);
             var gang = await GangRepository.FetchGangAsync(Context);
