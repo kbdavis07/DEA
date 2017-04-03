@@ -1,0 +1,17 @@
+<Project ToolsVersion="15.0" Sdk="Microsoft.NET.Sdk" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="../../Discord.Net.targets" />
+  <PropertyGroup>
+    <AssemblyName>Discord.Net.DebugTools</AssemblyName>
+    <RootNamespace>Discord</RootNamespace>
+    <Description>A Discord.Net extension adding some helper classes for diagnosing issues.</Description>
+    <TargetFrameworks>netstandard1.6</TargetFrameworks>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Discord.Net.Core\Discord.Net.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Net.NameResolution" Version="4.3.0" />
+    <PackageReference Include="System.Net.Sockets" Version="4.3.0" />
+    <PackageReference Include="System.Net.WebSockets.Client" Version="4.3.0" />
+  </ItemGroup>
+</Project>

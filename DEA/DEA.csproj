@@ -53,30 +53,6 @@
     <StartupObject>DEA.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Discord.Net, Version=0.9.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Discord.Net.0.9.6\lib\net45\Discord.Net.dll</HintPath>
-    </Reference>
-    <Reference Include="Discord.Net.Audio, Version=0.9.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Discord.Net.Audio.0.9.6\lib\net45\Discord.Net.Audio.dll</HintPath>
-    </Reference>
-    <Reference Include="Discord.Net.Commands, Version=0.9.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Discord.Net.Commands.0.9.6\lib\net45\Discord.Net.Commands.dll</HintPath>
-    </Reference>
-    <Reference Include="Discord.Net.Core">
-      <HintPath>..\Discord.Net-dev\Discord.Net-dev\src\Discord.Net.WebSocket\bin\Debug\netstandard1.1\Discord.Net.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Discord.Net.Modules, Version=0.9.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Discord.Net.Modules.0.9.6\lib\net45\Discord.Net.Modules.dll</HintPath>
-    </Reference>
-    <Reference Include="Discord.Net.Rest">
-      <HintPath>..\Discord.Net-dev\Discord.Net-dev\src\Discord.Net.WebSocket\bin\Debug\netstandard1.1\Discord.Net.Rest.dll</HintPath>
-    </Reference>
-    <Reference Include="Discord.Net.WebSocket">
-      <HintPath>..\Discord.Net-dev\Discord.Net-dev\src\Discord.Net.WebSocket\bin\Debug\netstandard1.1\Discord.Net.WebSocket.dll</HintPath>
-    </Reference>
-    <Reference Include="Discord.OAuth2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Discord.OAuth2.1.0.0\lib\net451\Discord.OAuth2.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -118,6 +94,12 @@
     </Reference>
     <Reference Include="Microsoft.AspNetCore.WebUtilities, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.WebUtilities.1.1.1\lib\net451\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Common.2.0.0\lib\netstandard1.3\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.2.0.0\lib\netstandard1.3\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.1.1.1\lib\netstandard1.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
@@ -180,6 +162,10 @@
     <Reference Include="System.Buffers, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.3.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
     </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.3.1\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -188,6 +174,12 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.3.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.FileVersionInfo, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.FileVersionInfo.4.3.0\lib\net46\System.Diagnostics.FileVersionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.StackTrace.4.3.0\lib\net46\System.Diagnostics.StackTrace.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.Tracing, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.Tracing.4.3.0\lib\net462\System.Diagnostics.Tracing.dll</HintPath>
@@ -222,6 +214,9 @@
     <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
     </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=1.4.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.1.4.2\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
     </Reference>
@@ -251,8 +246,17 @@
     <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
     </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.4.3.0\lib\net46\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
     <Reference Include="System.Text.Encodings.Web, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Text.Encodings.Web.4.3.0\lib\netstandard1.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Thread, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Thread.4.3.0\lib\net46\System.Threading.Thread.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -261,6 +265,15 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XmlDocument.4.3.0\lib\net46\System.Xml.XmlDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XPath, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.4.3.0\lib\net46\System.Xml.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.XDocument.4.3.0\lib\net46\System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
     <Reference Include="WebSocket4Net, Version=0.14.1.0, Culture=neutral, PublicKeyToken=eb4e154b696bf72a, processorArchitecture=MSIL">
       <HintPath>..\packages\WebSocket4Net.0.14.1\lib\net45\WebSocket4Net.dll</HintPath>
@@ -279,6 +292,8 @@
     <Compile Include="DAL\Repository\GuildRepository.cs" />
     <Compile Include="DAL\Repository\MuteRepository.cs" />
     <Compile Include="DAL\Repository\UserRepository.cs" />
+    <Compile Include="Discord\Discord.Net.Analyzers\AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Analyzers\ConfigureAwaitAnalyzer.cs" />
     <Compile Include="Discord\Discord.Net.Commands\AssemblyInfo.cs" />
     <Compile Include="Discord\Discord.Net.Commands\Attributes\AliasAttribute.cs" />
     <Compile Include="Discord\Discord.Net.Commands\Attributes\CommandAttribute.cs" />
@@ -344,8 +359,522 @@
     <Compile Include="Discord\Discord.Net.Commands\Results\TypeReaderResult.cs" />
     <Compile Include="Discord\Discord.Net.Commands\RunMode.cs" />
     <Compile Include="Discord\Discord.Net.Commands\Utilities\ReflectionUtils.cs" />
-    <Compile Include="Discord\IModuleBase.cs" />
-    <Compile Include="Discord\ModuleBase.cs" />
+    <Compile Include="Discord\Discord.Net.Core\AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Audio\AudioApplication.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Audio\AudioInStream.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Audio\AudioOutStream.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Audio\IAudioClient.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Audio\RTPFrame.cs" />
+    <Compile Include="Discord\Discord.Net.Core\CDN.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Commands\ICommandContext.cs" />
+    <Compile Include="Discord\Discord.Net.Core\ConnectionState.cs" />
+    <Compile Include="Discord\Discord.Net.Core\DiscordConfig.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\CacheMode.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Channels\Direction.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Channels\GuildChannelProperties.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Channels\IAudioChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Channels\IChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Channels\IDMChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Channels\IGroupChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Channels\IGuildChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Channels\IMessageChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Channels\IPrivateChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Channels\ITextChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Channels\IVoiceChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Channels\ReorderChannelProperties.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Channels\TextChannelProperties.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Channels\VoiceChannelProperties.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Guilds\DefaultMessageNotifications.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Guilds\GuildEmbedProperties.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Guilds\GuildEmoji.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Guilds\GuildIntegrationProperties.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Guilds\GuildProperties.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Guilds\IBan.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Guilds\IGuild.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Guilds\IGuildIntegration.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Guilds\IntegrationAccount.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Guilds\IUserGuild.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Guilds\IVoiceRegion.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Guilds\MfaLevel.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Guilds\PermissionTarget.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Guilds\VerificationLevel.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\IApplication.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\IDeletable.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\IEntity.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Image.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\ImageFormat.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\IMentionable.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Invites\IInvite.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Invites\IInviteMetadata.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\ISnowflakeEntity.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\IUpdateable.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\Embed.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\EmbedAuthor.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\EmbedField.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\EmbedFooter.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\EmbedImage.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\EmbedProvider.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\EmbedThumbnail.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\EmbedVideo.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\Emoji.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\IAttachment.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\IEmbed.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\IMessage.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\IReaction.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\ISystemMessage.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\ITag.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\IUserMessage.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\MessageProperties.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\MessageSource.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\MessageType.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\ReactionMetadata.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\Tag.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\TagHandling.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Messages\TagType.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Permissions\ChannelPermission.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Permissions\ChannelPermissions.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Permissions\GuildPermission.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Permissions\GuildPermissions.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Permissions\Overwrite.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Permissions\OverwritePermissions.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Permissions\PermValue.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Roles\Color.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Roles\IRole.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Roles\ReorderRoleProperties.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Roles\RoleProperties.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Users\Game.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Users\GuildUserProperties.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Users\IConnection.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Users\IGroupUser.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Users\IGuildUser.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Users\IPresence.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Users\ISelfUser.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Users\IUser.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Users\IVoiceState.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Users\IWebhookUser.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Users\SelfUserProperties.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Users\StreamType.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Entities\Users\UserStatus.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Extensions\AsyncEnumerableExtensions.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Extensions\CollectionExtensions.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Extensions\DiscordClientExtensions.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Extensions\TaskCompletionSourceExtensions.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Format.cs" />
+    <Compile Include="Discord\Discord.Net.Core\IDiscordClient.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Logging\Logger.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Logging\LogManager.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Logging\LogMessage.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Logging\LogSeverity.cs" />
+    <Compile Include="Discord\Discord.Net.Core\LoginState.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Net\HttpException.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Net\RateLimitedException.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Net\Rest\IRestClient.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Net\Rest\RestClientProvider.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Net\Rest\RestResponse.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Net\RpcException.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Net\Udp\IUdpSocket.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Net\Udp\UdpSocketProvider.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Net\WebSocketClosedException.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Net\WebSockets\IWebSocketClient.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Net\WebSockets\WebSocketProvider.cs" />
+    <Compile Include="Discord\Discord.Net.Core\obj\Debug\netstandard1.1\Discord.Net.Core.AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Core\obj\Debug\netstandard1.1\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Discord\Discord.Net.Core\obj\Debug\netstandard1.1\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Discord\Discord.Net.Core\obj\Debug\netstandard1.1\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Discord\Discord.Net.Core\obj\Debug\netstandard1.3\Discord.Net.Core.AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Core\obj\Debug\netstandard1.3\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Discord\Discord.Net.Core\obj\Debug\netstandard1.3\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Discord\Discord.Net.Core\obj\Debug\netstandard1.3\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Discord\Discord.Net.Core\RequestOptions.cs" />
+    <Compile Include="Discord\Discord.Net.Core\RetryMode.cs" />
+    <Compile Include="Discord\Discord.Net.Core\TokenType.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Utils\AsyncEvent.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Utils\Cacheable.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Utils\ConcurrentHashSet.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Utils\DateTimeUtils.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Utils\MentionUtils.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Utils\Optional.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Utils\Paging\Page.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Utils\Paging\PagedEnumerator.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Utils\Paging\PageInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Utils\Permissions.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Utils\Preconditions.cs" />
+    <Compile Include="Discord\Discord.Net.Core\Utils\RoleUtils.cs" />
+    <Compile Include="Discord\Discord.Net.DebugTools\UnstableUdpClient.cs" />
+    <Compile Include="Discord\Discord.Net.DebugTools\UnstableUdpClientProvider.cs" />
+    <Compile Include="Discord\Discord.Net.DebugTools\UnstableWebSocketClient.cs" />
+    <Compile Include="Discord\Discord.Net.DebugTools\UnstableWebSocketClientProvider.cs" />
+    <Compile Include="Discord\Discord.Net.Providers.UdpClient\obj\Debug\net45\Discord.Net.Providers.UdpClient.AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Providers.UdpClient\obj\Debug\net45\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Discord\Discord.Net.Providers.UdpClient\obj\Debug\net45\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Discord\Discord.Net.Providers.UdpClient\obj\Debug\net45\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Discord\Discord.Net.Providers.UdpClient\UDPClient.cs" />
+    <Compile Include="Discord\Discord.Net.Providers.UdpClient\UDPClientProvider.cs" />
+    <Compile Include="Discord\Discord.Net.Providers.WS4Net\obj\Debug\net45\Discord.Net.Providers.WS4Net.AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Providers.WS4Net\obj\Debug\net45\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Discord\Discord.Net.Providers.WS4Net\obj\Debug\net45\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Discord\Discord.Net.Providers.WS4Net\obj\Debug\net45\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Discord\Discord.Net.Providers.WS4Net\WS4NetClient.cs" />
+    <Compile Include="Discord\Discord.Net.Providers.WS4Net\WS4NetProvider.cs" />
+    <Compile Include="Discord\Discord.Net.Relay\ApplicationBuilderExtensions.cs" />
+    <Compile Include="Discord\Discord.Net.Relay\AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Relay\obj\Debug\netstandard1.3\Discord.Net.Relay.AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Relay\obj\Debug\netstandard1.3\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Discord\Discord.Net.Relay\obj\Debug\netstandard1.3\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Discord\Discord.Net.Relay\obj\Debug\netstandard1.3\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Discord\Discord.Net.Relay\RelayConnection.cs" />
+    <Compile Include="Discord\Discord.Net.Relay\RelayServer.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\Application.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\Attachment.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\Ban.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\Channel.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\Connection.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\Embed.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\EmbedAuthor.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\EmbedField.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\EmbedFooter.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\EmbedImage.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\EmbedProvider.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\EmbedThumbnail.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\EmbedVideo.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\Emoji.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\Game.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\Guild.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\GuildEmbed.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\GuildMember.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\Integration.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\IntegrationAccount.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\Invite.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\InviteChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\InviteGuild.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\InviteMetadata.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\Message.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\Overwrite.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\Presence.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\Reaction.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\ReadState.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\Relationship.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\RelationshipType.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\Role.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\User.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\UserGuild.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\VoiceRegion.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Common\VoiceState.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\EntityOrId.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Image.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Int53Attribute.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Net\MultipartFile.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\CreateChannelInviteParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\CreateDMChannelParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\CreateGuildBanParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\CreateGuildChannelParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\CreateGuildIntegrationParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\CreateGuildParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\CreateMessageParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\CreateWebhookMessageParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\DeleteMessagesParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\GetBotGatewayResponse.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\GetChannelMessagesParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\GetGatewayResponse.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\GetGuildMembersParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\GetGuildPruneCountResponse.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\GetGuildSummariesParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\GetReactionUsersParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\GuildPruneParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\ModifyChannelPermissionsParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\ModifyCurrentUserNickParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\ModifyCurrentUserParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\ModifyGuildChannelParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\ModifyGuildChannelsParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\ModifyGuildEmbedParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\ModifyGuildIntegrationParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\ModifyGuildMemberParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\ModifyGuildParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\ModifyGuildRoleParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\ModifyGuildRolesParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\ModifyMessageParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\ModifyTextChannelParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\ModifyVoiceChannelParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\UploadFileParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\API\Rest\UploadWebhookFileParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\BaseDiscordClient.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\ClientHelper.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\DiscordRestApiClient.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\DiscordRestClient.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\DiscordRestConfig.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Channels\ChannelHelper.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Channels\ChannelType.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Channels\IRestAudioChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Channels\IRestMessageChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Channels\IRestPrivateChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Channels\RestChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Channels\RestDMChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Channels\RestGroupChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Channels\RestGuildChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Channels\RestTextChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Channels\RestVoiceChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Channels\RpcVirtualMessageChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Guilds\GuildHelper.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Guilds\RestBan.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Guilds\RestGuild.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Guilds\RestGuildEmbed.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Guilds\RestGuildIntegration.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Guilds\RestUserGuild.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Guilds\RestVoiceRegion.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Invites\InviteHelper.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Invites\RestInvite.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Invites\RestInviteMetadata.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Messages\Attachment.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Messages\EmbedBuilder.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Messages\MessageHelper.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Messages\RestMessage.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Messages\RestReaction.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Messages\RestSystemMessage.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Messages\RestUserMessage.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\RestApplication.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\RestEntity.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Roles\RestRole.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Roles\RoleHelper.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Users\RestConnection.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Users\RestGroupUser.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Users\RestGuildUser.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Users\RestSelfUser.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Users\RestUser.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Users\RestWebhookUser.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Entities\Users\UserHelper.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Extensions\EntityExtensions.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Net\Converters\ArrayConverter.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Net\Converters\DiscordContractResolver.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Net\Converters\ImageConverter.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Net\Converters\NullableConverter.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Net\Converters\OptionalConverter.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Net\Converters\PermissionTargetConverter.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Net\Converters\StringEntityConverter.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Net\Converters\UInt64Converter.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Net\Converters\UInt64EntityConverter.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Net\Converters\UInt64EntityOrIdConverter.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Net\Converters\UserStatusConverter.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Net\DefaultRestClient.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Net\DefaultRestClientProvider.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Net\Queue\ClientBucket.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Net\Queue\RequestQueue.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Net\Queue\RequestQueueBucket.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Net\Queue\Requests\JsonRestRequest.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Net\Queue\Requests\MultipartRestRequest.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Net\Queue\Requests\RestRequest.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Net\Queue\Requests\WebSocketRequest.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Net\RateLimitInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\obj\Debug\netstandard1.1\Discord.Net.Rest.AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\obj\Debug\netstandard1.1\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\obj\Debug\netstandard1.1\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\obj\Debug\netstandard1.1\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\obj\Debug\netstandard1.3\Discord.Net.Rest.AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\obj\Debug\netstandard1.3\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\obj\Debug\netstandard1.3\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\obj\Debug\netstandard1.3\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Discord\Discord.Net.Rest\Utils\TypingNotifier.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\RpcFrame.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\AuthenticateParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\AuthenticateResponse.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\AuthorizeParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\AuthorizeResponse.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\Channel.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\ChannelSubscriptionParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\ChannelSummary.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\ErrorEvent.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\ExtendedVoiceState.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\GetChannelParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\GetChannelsParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\GetChannelsResponse.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\GetGuildParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\GetGuildsParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\GetGuildsResponse.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\Guild.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\GuildMember.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\GuildStatusEvent.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\GuildSubscriptionParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\GuildSummary.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\Message.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\MessageEvent.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\Pan.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\ReadyEvent.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\RpcConfig.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\SelectChannelParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\SetLocalVolumeParams.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\SetLocalVolumeResponse.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\SpeakingEvent.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\SubscriptionResponse.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\UserVoiceSettings.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\VoiceDevice.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\VoiceDeviceSettings.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\VoiceMode.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\VoiceSettings.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\API\Rpc\VoiceShortcut.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Commands\RpcCommandContext.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\DiscordRpcApiClient.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\DiscordRpcClient.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\DiscordRpcClient.Events.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\DiscordRpcConfig.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\Channels\IRpcAudioChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\Channels\IRpcMessageChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\Channels\IRpcPrivateChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\Channels\RpcChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\Channels\RpcChannelSummary.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\Channels\RpcDMChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\Channels\RpcGroupChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\Channels\RpcGuildChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\Channels\RpcTextChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\Channels\RpcVoiceChannel.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\Guilds\RpcGuild.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\Guilds\RpcGuildStatus.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\Guilds\RpcGuildSummary.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\Messages\RpcMessage.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\Messages\RpcSystemMessage.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\Messages\RpcUserMessage.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\RpcEntity.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\Users\Pan.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\Users\RpcGuildUser.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\Users\RpcUser.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\Users\RpcVoiceState.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\Users\RpcWebhookUser.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\UserVoiceProperties.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\VoiceDevice.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\VoiceDeviceProperties.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\VoiceModeProperties.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\VoiceProperties.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\VoiceSettings.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\VoiceShortcut.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Entities\VoiceShortcutType.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\Extensions\EntityExtensions.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\obj\Debug\netstandard1.1\Discord.Net.Rpc.AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\obj\Debug\netstandard1.1\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\obj\Debug\netstandard1.1\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\obj\Debug\netstandard1.1\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\obj\Debug\netstandard1.3\Discord.Net.Rpc.AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\obj\Debug\netstandard1.3\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\obj\Debug\netstandard1.3\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\obj\Debug\netstandard1.3\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\RpcChannelEvent.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\RpcGlobalEvent.cs" />
+    <Compile Include="Discord\Discord.Net.Rpc\RpcGuildEvent.cs" />
+    <Compile Include="Discord\Discord.Net.Webhook\AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Webhook\DiscordWebhookClient.cs" />
+    <Compile Include="Discord\Discord.Net.Webhook\obj\Debug\netstandard1.1\Discord.Net.Webhook.AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Webhook\obj\Debug\netstandard1.1\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Discord\Discord.Net.Webhook\obj\Debug\netstandard1.1\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Discord\Discord.Net.Webhook\obj\Debug\netstandard1.1\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Discord\Discord.Net.Webhook\obj\Debug\netstandard1.3\Discord.Net.Webhook.AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Webhook\obj\Debug\netstandard1.3\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Discord\Discord.Net.Webhook\obj\Debug\netstandard1.3\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Discord\Discord.Net.Webhook\obj\Debug\netstandard1.3\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\ExtendedGuild.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\GatewayOpCode.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\GuildBanEvent.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\GuildEmojiUpdateEvent.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\GuildMemberAddEvent.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\GuildMemberRemoveEvent.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\GuildMembersChunkEvent.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\GuildMemberUpdateEvent.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\GuildRoleCreateEvent.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\GuildRoleDeleteEvent.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\GuildRoleUpdateEvent.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\GuildSyncEvent.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\HelloEvent.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\IdentifyParams.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\MessageDeleteBulkEvent.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\Reaction.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\ReadyEvent.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\RecipientEvent.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\RemoveAllReactionsEvent.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\RequestMembersParams.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\ResumedEvent.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\ResumeParams.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\StatusUpdateParams.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\TypingStartEvent.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\VoiceServerUpdateEvent.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Gateway\VoiceStateUpdateParams.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\SocketFrame.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Voice\IdentifyParams.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Voice\ReadyEvent.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Voice\SelectProtocolParams.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Voice\SessionDescriptionEvent.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Voice\SpeakingEvent.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Voice\SpeakingParams.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Voice\UdpProtocolInfo.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\API\Voice\VoiceOpCode.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Audio\AudioClient.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Audio\AudioClient.Events.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Audio\Opus\OpusApplication.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Audio\Opus\OpusConverter.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Audio\Opus\OpusCtl.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Audio\Opus\OpusDecoder.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Audio\Opus\OpusEncoder.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Audio\Opus\OpusError.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Audio\Opus\OpusSignal.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Audio\Sodium\SecretBox.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Audio\Streams\BufferedWriteStream.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Audio\Streams\InputStream.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Audio\Streams\OpusDecodeStream.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Audio\Streams\OpusEncodeStream.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Audio\Streams\OutputStream.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Audio\Streams\RTPReadStream.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Audio\Streams\RTPWriteStream.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Audio\Streams\SodiumDecryptStream.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Audio\Streams\SodiumEncryptStream.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\ClientState.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Commands\ShardedCommandContext.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Commands\SocketCommandContext.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\ConnectionManager.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\DiscordShardedClient.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\DiscordShardedClient.Events.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\DiscordSocketApiClient.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\DiscordSocketClient.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\DiscordSocketClient.Events.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\DiscordSocketConfig.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\DiscordVoiceApiClient.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Channels\ISocketAudioChannel.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Channels\ISocketMessageChannel.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Channels\ISocketPrivateChannel.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Channels\SocketChannel.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Channels\SocketChannelHelper.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Channels\SocketDMChannel.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Channels\SocketGroupChannel.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Channels\SocketGuildChannel.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Channels\SocketTextChannel.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Channels\SocketVoiceChannel.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Guilds\SocketGuild.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Messages\MessageCache.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Messages\SocketMessage.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Messages\SocketReaction.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Messages\SocketSystemMessage.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Messages\SocketUserMessage.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Roles\SocketRole.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\SocketEntity.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Users\SocketGlobalUser.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Users\SocketGroupUser.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Users\SocketGuildUser.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Users\SocketPresence.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Users\SocketSelfUser.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Users\SocketUnknownUser.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Users\SocketUser.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Users\SocketVoiceState.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Entities\Users\SocketWebhookUser.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Extensions\EntityExtensions.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Net\DefaultUdpSocket.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Net\DefaultUdpSocketProvider.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Net\DefaultWebSocketClient.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\Net\DefaultWebSocketClientProvider.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\obj\Debug\netstandard1.1\Discord.Net.WebSocket.AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\obj\Debug\netstandard1.1\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\obj\Debug\netstandard1.1\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\obj\Debug\netstandard1.1\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\obj\Debug\netstandard1.3\Discord.Net.WebSocket.AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\obj\Debug\netstandard1.3\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\obj\Debug\netstandard1.3\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Discord\Discord.Net.WebSocket\obj\Debug\netstandard1.3\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Models\Gang.cs" />
     <Compile Include="Models\Guild.cs" />
     <Compile Include="Models\ModRole.cs" />
@@ -389,6 +918,67 @@
     <None Include="Discord\Discord.Net.Commands\obj\Discord.Net.Commands.csproj.nuget.g.props" />
     <None Include="Discord\Discord.Net.Commands\obj\Discord.Net.Commands.csproj.nuget.g.targets" />
     <None Include="Discord\Discord.Net.Commands\obj\project.assets.json" />
+    <None Include="Discord\Discord.Net.Core\bin\Debug\netstandard1.1\Discord.Net.Core.deps.json" />
+    <None Include="Discord\Discord.Net.Core\bin\Debug\netstandard1.3\Discord.Net.Core.deps.json" />
+    <None Include="Discord\Discord.Net.Core\obj\Debug\netstandard1.1\CoreCompileInputs.cache" />
+    <None Include="Discord\Discord.Net.Core\obj\Debug\netstandard1.1\Discord.Net.Core.csprojResolveAssemblyReference.cache" />
+    <None Include="Discord\Discord.Net.Core\obj\Debug\netstandard1.3\CoreCompileInputs.cache" />
+    <None Include="Discord\Discord.Net.Core\obj\Debug\netstandard1.3\Discord.Net.Core.csprojResolveAssemblyReference.cache" />
+    <None Include="Discord\Discord.Net.Core\obj\Discord.Net.Core.csproj.nuget.g.props" />
+    <None Include="Discord\Discord.Net.Core\obj\Discord.Net.Core.csproj.nuget.g.targets" />
+    <None Include="Discord\Discord.Net.Core\obj\project.assets.json" />
+    <None Include="Discord\Discord.Net.Providers.UdpClient\obj\Debug\net45\CoreCompileInputs.cache" />
+    <None Include="Discord\Discord.Net.Providers.UdpClient\obj\Debug\net45\Discord.Net.Providers.UdpClient.csprojResolveAssemblyReference.cache" />
+    <None Include="Discord\Discord.Net.Providers.UdpClient\obj\Discord.Net.Providers.UdpClient.csproj.nuget.g.props" />
+    <None Include="Discord\Discord.Net.Providers.UdpClient\obj\Discord.Net.Providers.UdpClient.csproj.nuget.g.targets" />
+    <None Include="Discord\Discord.Net.Providers.UdpClient\obj\project.assets.json" />
+    <None Include="Discord\Discord.Net.Providers.WS4Net\obj\Debug\net45\CoreCompileInputs.cache" />
+    <None Include="Discord\Discord.Net.Providers.WS4Net\obj\Debug\net45\Discord.Net.Providers.WS4Net.csprojResolveAssemblyReference.cache" />
+    <None Include="Discord\Discord.Net.Providers.WS4Net\obj\Discord.Net.Providers.WS4Net.csproj.nuget.g.props" />
+    <None Include="Discord\Discord.Net.Providers.WS4Net\obj\Discord.Net.Providers.WS4Net.csproj.nuget.g.targets" />
+    <None Include="Discord\Discord.Net.Providers.WS4Net\obj\project.assets.json" />
+    <None Include="Discord\Discord.Net.Relay\bin\Debug\netstandard1.3\Discord.Net.Relay.deps.json" />
+    <None Include="Discord\Discord.Net.Relay\obj\Debug\netstandard1.3\CoreCompileInputs.cache" />
+    <None Include="Discord\Discord.Net.Relay\obj\Debug\netstandard1.3\Discord.Net.Relay.csprojResolveAssemblyReference.cache" />
+    <None Include="Discord\Discord.Net.Relay\obj\Discord.Net.Relay.csproj.nuget.g.props" />
+    <None Include="Discord\Discord.Net.Relay\obj\Discord.Net.Relay.csproj.nuget.g.targets" />
+    <None Include="Discord\Discord.Net.Relay\obj\project.assets.json" />
+    <None Include="Discord\Discord.Net.Rest\bin\Debug\netstandard1.1\Discord.Net.Rest.deps.json" />
+    <None Include="Discord\Discord.Net.Rest\bin\Debug\netstandard1.3\Discord.Net.Rest.deps.json" />
+    <None Include="Discord\Discord.Net.Rest\obj\Debug\netstandard1.1\CoreCompileInputs.cache" />
+    <None Include="Discord\Discord.Net.Rest\obj\Debug\netstandard1.1\Discord.Net.Rest.csprojResolveAssemblyReference.cache" />
+    <None Include="Discord\Discord.Net.Rest\obj\Debug\netstandard1.3\CoreCompileInputs.cache" />
+    <None Include="Discord\Discord.Net.Rest\obj\Debug\netstandard1.3\Discord.Net.Rest.csprojResolveAssemblyReference.cache" />
+    <None Include="Discord\Discord.Net.Rest\obj\Discord.Net.Rest.csproj.nuget.g.props" />
+    <None Include="Discord\Discord.Net.Rest\obj\Discord.Net.Rest.csproj.nuget.g.targets" />
+    <None Include="Discord\Discord.Net.Rest\obj\project.assets.json" />
+    <None Include="Discord\Discord.Net.Rpc\bin\Debug\netstandard1.1\Discord.Net.Rpc.deps.json" />
+    <None Include="Discord\Discord.Net.Rpc\bin\Debug\netstandard1.3\Discord.Net.Rpc.deps.json" />
+    <None Include="Discord\Discord.Net.Rpc\obj\Debug\netstandard1.1\CoreCompileInputs.cache" />
+    <None Include="Discord\Discord.Net.Rpc\obj\Debug\netstandard1.1\Discord.Net.Rpc.csprojResolveAssemblyReference.cache" />
+    <None Include="Discord\Discord.Net.Rpc\obj\Debug\netstandard1.3\CoreCompileInputs.cache" />
+    <None Include="Discord\Discord.Net.Rpc\obj\Debug\netstandard1.3\Discord.Net.Rpc.csprojResolveAssemblyReference.cache" />
+    <None Include="Discord\Discord.Net.Rpc\obj\Discord.Net.Rpc.csproj.nuget.g.props" />
+    <None Include="Discord\Discord.Net.Rpc\obj\Discord.Net.Rpc.csproj.nuget.g.targets" />
+    <None Include="Discord\Discord.Net.Rpc\obj\project.assets.json" />
+    <None Include="Discord\Discord.Net.Webhook\bin\Debug\netstandard1.1\Discord.Net.Webhook.deps.json" />
+    <None Include="Discord\Discord.Net.Webhook\bin\Debug\netstandard1.3\Discord.Net.Webhook.deps.json" />
+    <None Include="Discord\Discord.Net.Webhook\obj\Debug\netstandard1.1\CoreCompileInputs.cache" />
+    <None Include="Discord\Discord.Net.Webhook\obj\Debug\netstandard1.1\Discord.Net.Webhook.csprojResolveAssemblyReference.cache" />
+    <None Include="Discord\Discord.Net.Webhook\obj\Debug\netstandard1.3\CoreCompileInputs.cache" />
+    <None Include="Discord\Discord.Net.Webhook\obj\Discord.Net.Webhook.csproj.nuget.g.props" />
+    <None Include="Discord\Discord.Net.Webhook\obj\Discord.Net.Webhook.csproj.nuget.g.targets" />
+    <None Include="Discord\Discord.Net.Webhook\obj\project.assets.json" />
+    <None Include="Discord\Discord.Net.WebSocket\bin\Debug\netstandard1.1\Discord.Net.WebSocket.deps.json" />
+    <None Include="Discord\Discord.Net.WebSocket\bin\Debug\netstandard1.3\Discord.Net.WebSocket.deps.json" />
+    <None Include="Discord\Discord.Net.WebSocket\obj\Debug\netstandard1.1\CoreCompileInputs.cache" />
+    <None Include="Discord\Discord.Net.WebSocket\obj\Debug\netstandard1.1\Discord.Net.WebSocket.csprojResolveAssemblyReference.cache" />
+    <None Include="Discord\Discord.Net.WebSocket\obj\Debug\netstandard1.3\CoreCompileInputs.cache" />
+    <None Include="Discord\Discord.Net.WebSocket\obj\Debug\netstandard1.3\Discord.Net.WebSocket.csprojResolveAssemblyReference.cache" />
+    <None Include="Discord\Discord.Net.WebSocket\obj\Discord.Net.WebSocket.csproj.nuget.g.props" />
+    <None Include="Discord\Discord.Net.WebSocket\obj\Discord.Net.WebSocket.csproj.nuget.g.targets" />
+    <None Include="Discord\Discord.Net.WebSocket\obj\project.assets.json" />
+    <None Include="Discord\Discord.Net\Discord.Net.nuspec" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -403,6 +993,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DEA.mdf</DependentUpon>
     </Content>
+    <Content Include="Discord\Discord.Net.Analyzers\Discord.Net.Analyzers.csproj" />
     <Content Include="Discord\Discord.Net.Commands\bin\Debug\netstandard1.1\Discord.Net.Commands.dll" />
     <Content Include="Discord\Discord.Net.Commands\bin\Debug\netstandard1.1\Discord.Net.Commands.pdb" />
     <Content Include="Discord\Discord.Net.Commands\bin\Debug\netstandard1.1\Discord.Net.Core.dll" />
@@ -418,8 +1009,133 @@
     <Content Include="Discord\Discord.Net.Commands\obj\Debug\netstandard1.3\Discord.Net.Commands.csproj.FileListAbsolute.txt" />
     <Content Include="Discord\Discord.Net.Commands\obj\Debug\netstandard1.3\Discord.Net.Commands.dll" />
     <Content Include="Discord\Discord.Net.Commands\obj\Debug\netstandard1.3\Discord.Net.Commands.pdb" />
+    <Content Include="Discord\Discord.Net.Core\bin\Debug\netstandard1.1\Discord.Net.Core.dll" />
+    <Content Include="Discord\Discord.Net.Core\bin\Debug\netstandard1.1\Discord.Net.Core.pdb" />
+    <Content Include="Discord\Discord.Net.Core\bin\Debug\netstandard1.3\Discord.Net.Core.dll" />
+    <Content Include="Discord\Discord.Net.Core\bin\Debug\netstandard1.3\Discord.Net.Core.pdb" />
+    <Content Include="Discord\Discord.Net.Core\Discord.Net.Core.csproj" />
+    <Content Include="Discord\Discord.Net.Core\obj\Debug\netstandard1.1\Discord.Net.Core.csproj.FileListAbsolute.txt" />
+    <Content Include="Discord\Discord.Net.Core\obj\Debug\netstandard1.1\Discord.Net.Core.dll" />
+    <Content Include="Discord\Discord.Net.Core\obj\Debug\netstandard1.1\Discord.Net.Core.pdb" />
+    <Content Include="Discord\Discord.Net.Core\obj\Debug\netstandard1.3\Discord.Net.Core.csproj.FileListAbsolute.txt" />
+    <Content Include="Discord\Discord.Net.Core\obj\Debug\netstandard1.3\Discord.Net.Core.dll" />
+    <Content Include="Discord\Discord.Net.Core\obj\Debug\netstandard1.3\Discord.Net.Core.pdb" />
+    <Content Include="Discord\Discord.Net.DebugTools\Discord.Net.DebugTools.csproj" />
+    <Content Include="Discord\Discord.Net.Providers.UdpClient\bin\Debug\net45\Discord.Net.Core.dll" />
+    <Content Include="Discord\Discord.Net.Providers.UdpClient\bin\Debug\net45\Discord.Net.Core.pdb" />
+    <Content Include="Discord\Discord.Net.Providers.UdpClient\bin\Debug\net45\Discord.Net.Providers.UDPClient.dll" />
+    <Content Include="Discord\Discord.Net.Providers.UdpClient\bin\Debug\net45\Discord.Net.Providers.UDPClient.pdb" />
+    <Content Include="Discord\Discord.Net.Providers.UdpClient\bin\Debug\net45\Newtonsoft.Json.dll" />
+    <Content Include="Discord\Discord.Net.Providers.UdpClient\bin\Debug\net45\System.Collections.Immutable.dll" />
+    <Content Include="Discord\Discord.Net.Providers.UdpClient\bin\Debug\net45\System.Interactive.Async.dll" />
+    <Content Include="Discord\Discord.Net.Providers.UdpClient\bin\Debug\net45\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="Discord\Discord.Net.Providers.UdpClient\Discord.Net.Providers.UdpClient.csproj" />
+    <Content Include="Discord\Discord.Net.Providers.UdpClient\obj\Debug\net45\Discord.Net.Providers.UdpClient.csproj.FileListAbsolute.txt" />
+    <Content Include="Discord\Discord.Net.Providers.UdpClient\obj\Debug\net45\Discord.Net.Providers.UDPClient.dll" />
+    <Content Include="Discord\Discord.Net.Providers.UdpClient\obj\Debug\net45\Discord.Net.Providers.UDPClient.pdb" />
+    <Content Include="Discord\Discord.Net.Providers.WS4Net\bin\Debug\net45\Discord.Net.Core.dll" />
+    <Content Include="Discord\Discord.Net.Providers.WS4Net\bin\Debug\net45\Discord.Net.Core.pdb" />
+    <Content Include="Discord\Discord.Net.Providers.WS4Net\bin\Debug\net45\Discord.Net.Providers.WS4Net.dll" />
+    <Content Include="Discord\Discord.Net.Providers.WS4Net\bin\Debug\net45\Discord.Net.Providers.WS4Net.pdb" />
+    <Content Include="Discord\Discord.Net.Providers.WS4Net\bin\Debug\net45\Newtonsoft.Json.dll" />
+    <Content Include="Discord\Discord.Net.Providers.WS4Net\bin\Debug\net45\System.Collections.Immutable.dll" />
+    <Content Include="Discord\Discord.Net.Providers.WS4Net\bin\Debug\net45\System.Interactive.Async.dll" />
+    <Content Include="Discord\Discord.Net.Providers.WS4Net\bin\Debug\net45\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="Discord\Discord.Net.Providers.WS4Net\bin\Debug\net45\WebSocket4Net.dll" />
+    <Content Include="Discord\Discord.Net.Providers.WS4Net\Discord.Net.Providers.WS4Net.csproj" />
+    <Content Include="Discord\Discord.Net.Providers.WS4Net\obj\Debug\net45\Discord.Net.Providers.WS4Net.csproj.FileListAbsolute.txt" />
+    <Content Include="Discord\Discord.Net.Providers.WS4Net\obj\Debug\net45\Discord.Net.Providers.WS4Net.dll" />
+    <Content Include="Discord\Discord.Net.Providers.WS4Net\obj\Debug\net45\Discord.Net.Providers.WS4Net.pdb" />
+    <Content Include="Discord\Discord.Net.Relay\bin\Debug\netstandard1.3\Discord.Net.Core.dll" />
+    <Content Include="Discord\Discord.Net.Relay\bin\Debug\netstandard1.3\Discord.Net.Core.pdb" />
+    <Content Include="Discord\Discord.Net.Relay\bin\Debug\netstandard1.3\Discord.Net.Relay.dll" />
+    <Content Include="Discord\Discord.Net.Relay\bin\Debug\netstandard1.3\Discord.Net.Relay.pdb" />
+    <Content Include="Discord\Discord.Net.Relay\bin\Debug\netstandard1.3\Discord.Net.Rest.dll" />
+    <Content Include="Discord\Discord.Net.Relay\bin\Debug\netstandard1.3\Discord.Net.Rest.pdb" />
+    <Content Include="Discord\Discord.Net.Relay\bin\Debug\netstandard1.3\Discord.Net.WebSocket.dll" />
+    <Content Include="Discord\Discord.Net.Relay\bin\Debug\netstandard1.3\Discord.Net.WebSocket.pdb" />
+    <Content Include="Discord\Discord.Net.Relay\Discord.Net.Relay.csproj" />
+    <Content Include="Discord\Discord.Net.Relay\obj\Debug\netstandard1.3\Discord.Net.Relay.csproj.FileListAbsolute.txt" />
+    <Content Include="Discord\Discord.Net.Relay\obj\Debug\netstandard1.3\Discord.Net.Relay.dll" />
+    <Content Include="Discord\Discord.Net.Relay\obj\Debug\netstandard1.3\Discord.Net.Relay.pdb" />
+    <Content Include="Discord\Discord.Net.Rest\bin\Debug\netstandard1.1\Discord.Net.Core.dll" />
+    <Content Include="Discord\Discord.Net.Rest\bin\Debug\netstandard1.1\Discord.Net.Core.pdb" />
+    <Content Include="Discord\Discord.Net.Rest\bin\Debug\netstandard1.1\Discord.Net.Rest.dll" />
+    <Content Include="Discord\Discord.Net.Rest\bin\Debug\netstandard1.1\Discord.Net.Rest.pdb" />
+    <Content Include="Discord\Discord.Net.Rest\bin\Debug\netstandard1.3\Discord.Net.Core.dll" />
+    <Content Include="Discord\Discord.Net.Rest\bin\Debug\netstandard1.3\Discord.Net.Core.pdb" />
+    <Content Include="Discord\Discord.Net.Rest\bin\Debug\netstandard1.3\Discord.Net.Rest.dll" />
+    <Content Include="Discord\Discord.Net.Rest\bin\Debug\netstandard1.3\Discord.Net.Rest.pdb" />
+    <Content Include="Discord\Discord.Net.Rest\Discord.Net.Rest.csproj" />
+    <Content Include="Discord\Discord.Net.Rest\obj\Debug\netstandard1.1\Discord.Net.Rest.csproj.FileListAbsolute.txt" />
+    <Content Include="Discord\Discord.Net.Rest\obj\Debug\netstandard1.1\Discord.Net.Rest.dll" />
+    <Content Include="Discord\Discord.Net.Rest\obj\Debug\netstandard1.1\Discord.Net.Rest.pdb" />
+    <Content Include="Discord\Discord.Net.Rest\obj\Debug\netstandard1.3\Discord.Net.Rest.csproj.FileListAbsolute.txt" />
+    <Content Include="Discord\Discord.Net.Rest\obj\Debug\netstandard1.3\Discord.Net.Rest.dll" />
+    <Content Include="Discord\Discord.Net.Rest\obj\Debug\netstandard1.3\Discord.Net.Rest.pdb" />
+    <Content Include="Discord\Discord.Net.Rpc\bin\Debug\netstandard1.1\Discord.Net.Core.dll" />
+    <Content Include="Discord\Discord.Net.Rpc\bin\Debug\netstandard1.1\Discord.Net.Core.pdb" />
+    <Content Include="Discord\Discord.Net.Rpc\bin\Debug\netstandard1.1\Discord.Net.Rest.dll" />
+    <Content Include="Discord\Discord.Net.Rpc\bin\Debug\netstandard1.1\Discord.Net.Rest.pdb" />
+    <Content Include="Discord\Discord.Net.Rpc\bin\Debug\netstandard1.1\Discord.Net.Rpc.dll" />
+    <Content Include="Discord\Discord.Net.Rpc\bin\Debug\netstandard1.1\Discord.Net.Rpc.pdb" />
+    <Content Include="Discord\Discord.Net.Rpc\bin\Debug\netstandard1.3\Discord.Net.Core.dll" />
+    <Content Include="Discord\Discord.Net.Rpc\bin\Debug\netstandard1.3\Discord.Net.Core.pdb" />
+    <Content Include="Discord\Discord.Net.Rpc\bin\Debug\netstandard1.3\Discord.Net.Rest.dll" />
+    <Content Include="Discord\Discord.Net.Rpc\bin\Debug\netstandard1.3\Discord.Net.Rest.pdb" />
+    <Content Include="Discord\Discord.Net.Rpc\bin\Debug\netstandard1.3\Discord.Net.Rpc.dll" />
+    <Content Include="Discord\Discord.Net.Rpc\bin\Debug\netstandard1.3\Discord.Net.Rpc.pdb" />
+    <Content Include="Discord\Discord.Net.Rpc\Discord.Net.Rpc.csproj" />
+    <Content Include="Discord\Discord.Net.Rpc\obj\Debug\netstandard1.1\Discord.Net.Rpc.csproj.FileListAbsolute.txt" />
+    <Content Include="Discord\Discord.Net.Rpc\obj\Debug\netstandard1.1\Discord.Net.Rpc.dll" />
+    <Content Include="Discord\Discord.Net.Rpc\obj\Debug\netstandard1.1\Discord.Net.Rpc.pdb" />
+    <Content Include="Discord\Discord.Net.Rpc\obj\Debug\netstandard1.3\Discord.Net.Rpc.csproj.FileListAbsolute.txt" />
+    <Content Include="Discord\Discord.Net.Rpc\obj\Debug\netstandard1.3\Discord.Net.Rpc.dll" />
+    <Content Include="Discord\Discord.Net.Rpc\obj\Debug\netstandard1.3\Discord.Net.Rpc.pdb" />
+    <Content Include="Discord\Discord.Net.Webhook\bin\Debug\netstandard1.1\Discord.Net.Core.dll" />
+    <Content Include="Discord\Discord.Net.Webhook\bin\Debug\netstandard1.1\Discord.Net.Core.pdb" />
+    <Content Include="Discord\Discord.Net.Webhook\bin\Debug\netstandard1.1\Discord.Net.Rest.dll" />
+    <Content Include="Discord\Discord.Net.Webhook\bin\Debug\netstandard1.1\Discord.Net.Rest.pdb" />
+    <Content Include="Discord\Discord.Net.Webhook\bin\Debug\netstandard1.1\Discord.Net.Webhook.dll" />
+    <Content Include="Discord\Discord.Net.Webhook\bin\Debug\netstandard1.1\Discord.Net.Webhook.pdb" />
+    <Content Include="Discord\Discord.Net.Webhook\bin\Debug\netstandard1.3\Discord.Net.Core.dll" />
+    <Content Include="Discord\Discord.Net.Webhook\bin\Debug\netstandard1.3\Discord.Net.Core.pdb" />
+    <Content Include="Discord\Discord.Net.Webhook\bin\Debug\netstandard1.3\Discord.Net.Rest.dll" />
+    <Content Include="Discord\Discord.Net.Webhook\bin\Debug\netstandard1.3\Discord.Net.Rest.pdb" />
+    <Content Include="Discord\Discord.Net.Webhook\bin\Debug\netstandard1.3\Discord.Net.Webhook.dll" />
+    <Content Include="Discord\Discord.Net.Webhook\bin\Debug\netstandard1.3\Discord.Net.Webhook.pdb" />
+    <Content Include="Discord\Discord.Net.Webhook\Discord.Net.Webhook.csproj" />
+    <Content Include="Discord\Discord.Net.Webhook\obj\Debug\netstandard1.1\Discord.Net.Webhook.csproj.FileListAbsolute.txt" />
+    <Content Include="Discord\Discord.Net.Webhook\obj\Debug\netstandard1.1\Discord.Net.Webhook.dll" />
+    <Content Include="Discord\Discord.Net.Webhook\obj\Debug\netstandard1.1\Discord.Net.Webhook.pdb" />
+    <Content Include="Discord\Discord.Net.Webhook\obj\Debug\netstandard1.3\Discord.Net.Webhook.csproj.FileListAbsolute.txt" />
+    <Content Include="Discord\Discord.Net.Webhook\obj\Debug\netstandard1.3\Discord.Net.Webhook.dll" />
+    <Content Include="Discord\Discord.Net.Webhook\obj\Debug\netstandard1.3\Discord.Net.Webhook.pdb" />
+    <Content Include="Discord\Discord.Net.WebSocket\bin\Debug\netstandard1.1\Discord.Net.Core.dll" />
+    <Content Include="Discord\Discord.Net.WebSocket\bin\Debug\netstandard1.1\Discord.Net.Core.pdb" />
+    <Content Include="Discord\Discord.Net.WebSocket\bin\Debug\netstandard1.1\Discord.Net.Rest.dll" />
+    <Content Include="Discord\Discord.Net.WebSocket\bin\Debug\netstandard1.1\Discord.Net.Rest.pdb" />
+    <Content Include="Discord\Discord.Net.WebSocket\bin\Debug\netstandard1.1\Discord.Net.WebSocket.dll" />
+    <Content Include="Discord\Discord.Net.WebSocket\bin\Debug\netstandard1.1\Discord.Net.WebSocket.pdb" />
+    <Content Include="Discord\Discord.Net.WebSocket\bin\Debug\netstandard1.3\Discord.Net.Core.dll" />
+    <Content Include="Discord\Discord.Net.WebSocket\bin\Debug\netstandard1.3\Discord.Net.Core.pdb" />
+    <Content Include="Discord\Discord.Net.WebSocket\bin\Debug\netstandard1.3\Discord.Net.Rest.dll" />
+    <Content Include="Discord\Discord.Net.WebSocket\bin\Debug\netstandard1.3\Discord.Net.Rest.pdb" />
+    <Content Include="Discord\Discord.Net.WebSocket\bin\Debug\netstandard1.3\Discord.Net.WebSocket.dll" />
+    <Content Include="Discord\Discord.Net.WebSocket\bin\Debug\netstandard1.3\Discord.Net.WebSocket.pdb" />
+    <Content Include="Discord\Discord.Net.WebSocket\Discord.Net.WebSocket.csproj" />
+    <Content Include="Discord\Discord.Net.WebSocket\Discord.Net.WebSocket.csproj.user" />
+    <Content Include="Discord\Discord.Net.WebSocket\obj\Debug\netstandard1.1\Discord.Net.WebSocket.csproj.FileListAbsolute.txt" />
+    <Content Include="Discord\Discord.Net.WebSocket\obj\Debug\netstandard1.1\Discord.Net.WebSocket.dll" />
+    <Content Include="Discord\Discord.Net.WebSocket\obj\Debug\netstandard1.1\Discord.Net.WebSocket.pdb" />
+    <Content Include="Discord\Discord.Net.WebSocket\obj\Debug\netstandard1.3\Discord.Net.WebSocket.csproj.FileListAbsolute.txt" />
+    <Content Include="Discord\Discord.Net.WebSocket\obj\Debug\netstandard1.3\Discord.Net.WebSocket.dll" />
+    <Content Include="Discord\Discord.Net.WebSocket\obj\Debug\netstandard1.3\Discord.Net.WebSocket.pdb" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
       <Visible>False</Visible>
