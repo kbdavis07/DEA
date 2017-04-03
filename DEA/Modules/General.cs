@@ -1,12 +1,11 @@
-﻿using Discord;
-using Discord.Commands;
-using System;
-using System.Threading.Tasks;
-using DEA.SQLite.Models;
-using DEA.SQLite.Repository;
-using System.Linq;
-using Discord.WebSocket;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using DEA.DAL.Repository;
+using Discord;
+using Discord.Commands;
+using Discord.WebSocket;
 
 namespace DEA.Modules
 {
@@ -21,7 +20,7 @@ namespace DEA.Modules
         {
             var guild = await GuildRepository.FetchGuildAsync(Context.Guild.Id);
             var user = await UserRepository.FetchUserAsync(Context);
-            double cash = user.Cash;
+            double cash = user.cash;
             switch (investString)
             {
                 case "line":
@@ -30,7 +29,7 @@ namespace DEA.Modules
                         await ReplyAsync($"{Context.User.Mention}, you do not have enough money. Balance: {cash.ToString("C", Config.CI)}");
                         break;
                     }
-                    if (user.MessageCooldown == Config.LINE_COOLDOWN)
+                    if (user.messagecooldown == Config.LINE_COOLDOWN)
                     {
                         await ReplyAsync($"{Context.User.Mention}, you have already purchased this investment.");
                         break;
