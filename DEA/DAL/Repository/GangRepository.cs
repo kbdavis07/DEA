@@ -11,7 +11,7 @@ namespace DEA.DAL.Repository
     public static class GangRepository
     {
 
-        public static async Task ModifyAsync(Func<gang, Task> function, Discord.Commands.SocketCommandContext context)
+        public static async Task ModifyAsync(Func<gang, Task> function, SocketCommandContext context)
         {
             var gang = await FetchGangAsync(context.User.Id, context.Guild.Id);
             await function(gang);
@@ -27,7 +27,7 @@ namespace DEA.DAL.Repository
 
         public static async Task<gang> FetchGangAsync(SocketCommandContext context)
         {
-            var gang = await BaseRepository<gang>.SearchFor(c => (c.leaderid == context.User.Id || c.users.Any(x => x == context.User.Id))
+            var gang = await BaseRepository<gang>.SearchFor(c => (c.leaderid == context.User.Id || c.users.Any(x => x.id == (decimal)context.User.Id))
                                        && c.guildid == (decimal)context.Guild.Id).FirstOrDefaultAsync();
             if (gang == null) throw new Exception("This user is not in a gang.");
             return gang;

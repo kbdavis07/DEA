@@ -65,6 +65,9 @@
     <Reference Include="Discord.Net.Modules, Version=0.9.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Discord.Net.Modules.0.9.6\lib\net45\Discord.Net.Modules.dll</HintPath>
     </Reference>
+    <Reference Include="Discord.Net.WebSocket">
+      <HintPath>..\Discord.Net-dev\Discord.Net-dev\src\Discord.Net.WebSocket\bin\Debug\netstandard1.1\Discord.Net.WebSocket.dll</HintPath>
+    </Reference>
     <Reference Include="Discord.OAuth2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Discord.OAuth2.1.0.0\lib\net451\Discord.OAuth2.dll</HintPath>
     </Reference>
