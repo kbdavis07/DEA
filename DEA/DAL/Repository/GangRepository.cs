@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
@@ -41,78 +42,90 @@ namespace DEA.DAL.Repository
             return gang;
         }
 
-        public static async Task<Gang> FetchGangAsync(string gangName, ulong guildId)
+        public static async Task<gang> FetchGangAsync(string gangName, ulong guildId)
         {
-            var gang = await BaseRepository<Gang>.SearchFor(c => c.Name.ToLower() == gangName.ToLower() && c.GuildId == guildId).FirstOrDefaultAsync();
+            var gang = await BaseRepository<gang>.SearchFor(c => c.name.ToLower() == gangName.ToLower() && c.guildid == (decimal)guildId).FirstOrDefaultAsync();
             if (gang == null) throw new Exception("This user is not in a gang.");
             return gang;
         }
 
-        public static async Task<Gang> CreateGangAsync(ulong leaderId, ulong guildId, string name)
+        public static async Task<gang> CreateGangAsync(ulong leaderId, ulong guildId, string name)
         {
-            if (await BaseRepository<Gang>.GetAll().AnyAsync(x => x.Name.ToLower() == name.ToLower() && x.GuildId == guildId)) throw new Exception($"There is already a gang by the name {name}.");
-            if (name.Length > Config.GANG_NAME_CHAR_LIMIT) throw new Exception($"The length of a gang name may not be longer than {Config.GANG_NAME_CHAR_LIMIT} characters.");
-            var CreatedGang = new Gang()
+            if (await BaseRepository<gang>.GetAll().AnyAsync(x => x.name.ToLower() == name.ToLower() && x.guildid == (decimal)guildId))
             {
-                GuildId = guildId,
-                LeaderId = leaderId,
-                Name = name
+                throw new Exception($"There is already a gang by the name {name}.");
+            }
+               
+
+            //if (name.Length > Config.GANG_NAME_CHAR_LIMIT)
+            //{
+            //    throw new Exception($"The length of a gang name may not be longer than {Config.GANG_NAME_CHAR_LIMIT} characters.");
+            //}
+
+                
+            var CreatedGang = new gang()
+            {
+                guildid = (decimal)guildId,
+                leaderid = (decimal)leaderId,
+                name = name
             };
-            await BaseRepository<Gang>.InsertAsync(CreatedGang);
+            await BaseRepository<gang>.InsertAsync(CreatedGang);
             return CreatedGang;
         }
 
-        public static async Task<Gang> DestroyGangAsync(ulong userId, ulong guildId)
+        public static async Task<gang> DestroyGangAsync(ulong userId, ulong guildId)
         {
             var gang = await FetchGangAsync(userId, guildId);
-            await BaseRepository<Gang>.DeleteAsync(gang);
+            await BaseRepository<gang>.DeleteAsync(gang);
             return gang;
         }
 
         public static async Task<bool> InGangAsync(ulong userId, ulong guildId)
         {
-            return await BaseRepository<Gang>.SearchFor(c => (c.LeaderId == userId || c.Members.Any(x => x == userId)) && c.GuildId == guildId).AnyAsync();
+            return await BaseRepository<gang>.SearchFor(c => (c.leaderid == (decimal)userId || c.users.Any(x => x.id == (decimal)userId)) && c.guildid == (decimal)guildId).AnyAsync();
         }
 
         public static async Task<bool> IsMemberOfAsync(ulong memberId, ulong guildId, ulong userId)
         {
             var gang = await FetchGangAsync(memberId, guildId);
-            if (gang.LeaderId == userId || gang.Members.Any(x => x == userId)) return true;
+            if (gang.leaderid == (decimal)userId || gang.users.Any(x => x.id == (decimal)userId)) return true;
             return false;
         }
 
-        public static async Task<bool> IsFullAsync(ulong userId, ulong guildId)
-        {
-            var gang = await FetchGangAsync(userId, guildId);
-            if (gang.Members.Length == 4) return true;
-            return false;
-        }
+        //public static async Task<bool> IsFullAsync(ulong userId, ulong guildId)
+        //{
+        //    var gang = await FetchGangAsync(userId, guildId);
 
-        public static async Task RemoveMemberAsync(ulong memberId, ulong guildId)
-        {
-            var gang = await FetchGangAsync(memberId, guildId);
-            for (int i = 0; i < gang.Members.Length; i++)
-                if (gang.Members[i] == memberId) gang.Members[i] = 0;
-            await BaseRepository<Gang>.UpdateAsync(gang);
-        }
+        //    if (gang.users.Length == 4) return true;
+        //    return false;
+        //}
 
-        public static async Task AddMemberAsync(ulong userId, ulong guildId, ulong newMemberId)
-        {
-            var gang = await FetchGangAsync(userId, guildId);
-            for (int i = 0; i < gang.Members.Length; i++)
-            {
-                if (gang.Members[i] == 0)
-                {
-                    gang.Members[i] = newMemberId;
-                    break;
-                }
-            }
-            await BaseRepository<Gang>.UpdateAsync(gang);
-        }
+        //public static async Task RemoveMemberAsync(ulong memberId, ulong guildId)
+        //{
+        //    var gang = await FetchGangAsync(memberId, guildId);
 
-        public static async Task<List<Gang>> AllAsync(ulong guildId)
+        //    for (int i = 0; i < gang.users.Length; i++)
+        //        if (gang.Members[i] == memberId) gang.Members[i] = 0;
+        //    await BaseRepository<Gang>.UpdateAsync(gang);
+        //}
+
+        //public static async Task AddMemberAsync(ulong userId, ulong guildId, ulong newMemberId)
+        //{
+        //    var gang = await FetchGangAsync(userId, guildId);
+        //    for (int i = 0; i < gang.Members.Length; i++)
+        //    {
+        //        if (gang.Members[i] == 0)
+        //        {
+        //            gang.Members[i] = newMemberId;
+        //            break;
+        //        }
+        //    }
+        //    await BaseRepository<gang>.UpdateAsync(gang);
+        //}
+
+        public static async Task<List<gang>> AllAsync(ulong guildId)
         {
-            return (await BaseRepository<Gang>.GetAll().ToListAsync()).FindAll(x => x.GuildId == guildId);
+            return (await BaseRepository<gang>.GetAll().ToListAsync()).FindAll(x => x.guildid == (decimal)guildId);
         }
     }
 }
