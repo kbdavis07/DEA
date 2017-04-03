@@ -279,6 +279,73 @@
     <Compile Include="DAL\Repository\GuildRepository.cs" />
     <Compile Include="DAL\Repository\MuteRepository.cs" />
     <Compile Include="DAL\Repository\UserRepository.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Attributes\AliasAttribute.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Attributes\CommandAttribute.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Attributes\DontAutoLoadAttribute.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Attributes\DontInjectAttribute.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Attributes\GroupAttribute.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Attributes\NameAttribute.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Attributes\OverrideTypeReaderAttribute.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Attributes\ParameterPreconditionAttribute.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Attributes\PreconditionAttribute.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Attributes\Preconditions\RequireBotPermissionAttribute.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Attributes\Preconditions\RequireContextAttribute.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Attributes\Preconditions\RequireOwnerAttribute.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Attributes\Preconditions\RequireUserPermissionAttribute.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Attributes\PriorityAttribute.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Attributes\RemainderAttribute.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Attributes\RemarksAttribute.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Attributes\SummaryAttribute.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Builders\CommandBuilder.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Builders\ModuleBuilder.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Builders\ModuleClassBuilder.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Builders\ParameterBuilder.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\CommandContext.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\CommandError.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\CommandException.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\CommandMatch.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\CommandParser.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\CommandService.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\CommandServiceConfig.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Dependencies\DependencyMap.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Dependencies\IDependencyMap.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Extensions\IEnumerableExtensions.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Extensions\MessageExtensions.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\IModuleBase.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Info\CommandInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Info\ModuleInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Info\ParameterInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Map\CommandMap.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Map\CommandMapNode.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\ModuleBase.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\MultiMatchHandling.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\obj\Debug\netstandard1.1\Discord.Net.Commands.AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\obj\Debug\netstandard1.1\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\obj\Debug\netstandard1.1\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\obj\Debug\netstandard1.1\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\obj\Debug\netstandard1.3\Discord.Net.Commands.AssemblyInfo.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\obj\Debug\netstandard1.3\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\obj\Debug\netstandard1.3\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\obj\Debug\netstandard1.3\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\PrimitiveParsers.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Readers\ChannelTypeReader.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Readers\EnumTypeReader.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Readers\MessageTypeReader.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Readers\PrimitiveTypeReader.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Readers\RoleTypeReader.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Readers\TypeReader.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Readers\UserTypeReader.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Results\ExecuteResult.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Results\IResult.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Results\ParseResult.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Results\PreconditionResult.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Results\SearchResult.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Results\TypeReaderResult.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\RunMode.cs" />
+    <Compile Include="Discord\Discord.Net.Commands\Utilities\ReflectionUtils.cs" />
+    <Compile Include="Discord\IModuleBase.cs" />
+    <Compile Include="Discord\ModuleBase.cs" />
     <Compile Include="Models\Gang.cs" />
     <Compile Include="Models\Guild.cs" />
     <Compile Include="Models\ModRole.cs" />
@@ -294,6 +361,8 @@
     <Compile Include="Modules\NSFW.cs" />
     <Compile Include="Modules\Owners.cs" />
     <Compile Include="Modules\System.cs" />
+    <Compile Include="Preconditions\Require.cs" />
+    <Compile Include="Preconditions\RequireCooldown.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -301,6 +370,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Attributes.cs" />
+    <Compile Include="Resources\Config.cs" />
+    <Compile Include="Resources\Credentials.cs" />
     <Compile Include="Services\Logger.cs" />
     <Compile Include="Services\PrettyConsole.cs" />
     <Compile Include="Services\RankHandler.cs" />
@@ -308,6 +380,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Discord\Discord.Net.Commands\bin\Debug\netstandard1.1\Discord.Net.Commands.deps.json" />
+    <None Include="Discord\Discord.Net.Commands\bin\Debug\netstandard1.3\Discord.Net.Commands.deps.json" />
+    <None Include="Discord\Discord.Net.Commands\obj\Debug\netstandard1.1\CoreCompileInputs.cache" />
+    <None Include="Discord\Discord.Net.Commands\obj\Debug\netstandard1.1\Discord.Net.Commands.csprojResolveAssemblyReference.cache" />
+    <None Include="Discord\Discord.Net.Commands\obj\Debug\netstandard1.3\CoreCompileInputs.cache" />
+    <None Include="Discord\Discord.Net.Commands\obj\Debug\netstandard1.3\Discord.Net.Commands.csprojResolveAssemblyReference.cache" />
+    <None Include="Discord\Discord.Net.Commands\obj\Discord.Net.Commands.csproj.nuget.g.props" />
+    <None Include="Discord\Discord.Net.Commands\obj\Discord.Net.Commands.csproj.nuget.g.targets" />
+    <None Include="Discord\Discord.Net.Commands\obj\project.assets.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -322,6 +403,21 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DEA.mdf</DependentUpon>
     </Content>
+    <Content Include="Discord\Discord.Net.Commands\bin\Debug\netstandard1.1\Discord.Net.Commands.dll" />
+    <Content Include="Discord\Discord.Net.Commands\bin\Debug\netstandard1.1\Discord.Net.Commands.pdb" />
+    <Content Include="Discord\Discord.Net.Commands\bin\Debug\netstandard1.1\Discord.Net.Core.dll" />
+    <Content Include="Discord\Discord.Net.Commands\bin\Debug\netstandard1.1\Discord.Net.Core.pdb" />
+    <Content Include="Discord\Discord.Net.Commands\bin\Debug\netstandard1.3\Discord.Net.Commands.dll" />
+    <Content Include="Discord\Discord.Net.Commands\bin\Debug\netstandard1.3\Discord.Net.Commands.pdb" />
+    <Content Include="Discord\Discord.Net.Commands\bin\Debug\netstandard1.3\Discord.Net.Core.dll" />
+    <Content Include="Discord\Discord.Net.Commands\bin\Debug\netstandard1.3\Discord.Net.Core.pdb" />
+    <Content Include="Discord\Discord.Net.Commands\Discord.Net.Commands.csproj" />
+    <Content Include="Discord\Discord.Net.Commands\obj\Debug\netstandard1.1\Discord.Net.Commands.csproj.FileListAbsolute.txt" />
+    <Content Include="Discord\Discord.Net.Commands\obj\Debug\netstandard1.1\Discord.Net.Commands.dll" />
+    <Content Include="Discord\Discord.Net.Commands\obj\Debug\netstandard1.1\Discord.Net.Commands.pdb" />
+    <Content Include="Discord\Discord.Net.Commands\obj\Debug\netstandard1.3\Discord.Net.Commands.csproj.FileListAbsolute.txt" />
+    <Content Include="Discord\Discord.Net.Commands\obj\Debug\netstandard1.3\Discord.Net.Commands.dll" />
+    <Content Include="Discord\Discord.Net.Commands\obj\Debug\netstandard1.3\Discord.Net.Commands.pdb" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

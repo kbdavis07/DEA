@@ -1,8 +1,7 @@
-﻿using Discord;
-using Discord.Commands;
-using System;
+﻿using System;
 using System.Threading.Tasks;
-using DEA.SQLite.Repository;
+using Discord;
+using Discord.Commands;
 using Discord.WebSocket;
 
 namespace DEA.Modules
