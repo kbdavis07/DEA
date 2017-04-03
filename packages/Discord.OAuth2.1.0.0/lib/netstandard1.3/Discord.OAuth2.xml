@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Discord.OAuth2</name>
+    </assembly>
+    <members>
+        <member name="T:Discord.OAuth2.DiscordAppBuilderExtensions">
+            <summary> Extension methods to add Discord authentication capabilities to an HTTP application pipeline. </summary>
+        </member>
+        <member name="M:Discord.OAuth2.DiscordAppBuilderExtensions.UseDiscordAuthentication(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary> Adds the <see cref="T:Discord.OAuth2.DiscordMiddleware"/> middleware to the specified <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/>, which enables Discord authentication capabilities. </summary>
+            <param name="app">The <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> to add the middleware to.</param>
+        </member>
+        <member name="M:Discord.OAuth2.DiscordAppBuilderExtensions.UseDiscordAuthentication(Microsoft.AspNetCore.Builder.IApplicationBuilder,Discord.OAuth2.DiscordOptions)">
+            <summary> Adds the <see cref="T:Discord.OAuth2.DiscordMiddleware"/> middleware to the specified <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/>, which enables Discord authentication capabilities. </summary>
+            <param name="app">The <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> to add the middleware to.</param>
+            <param name="options">A <see cref="T:Discord.OAuth2.DiscordOptions"/> that specifies options for the middleware.</param>
+        </member>
+        <member name="T:Discord.OAuth2.DiscordDefaults">
+            <summary> A collection of default values used by DiscordMiddleware. </summary>
+        </member>
+        <member name="F:Discord.OAuth2.DiscordDefaults.AuthenticationScheme">
+            <summary> The default authentication scheme. </summary>
+        </member>
+        <member name="F:Discord.OAuth2.DiscordDefaults.AuthorizationEndpoint">
+            <summary> The default oauth authentication endpoint for Discord. </summary>
+        </member>
+        <member name="F:Discord.OAuth2.DiscordDefaults.TokenEndpoint">
+            <summary> The default oauth token endpoint for Discord. </summary>
+        </member>
+        <member name="F:Discord.OAuth2.DiscordDefaults.UserInformationEndpoint">
+            <summary> The default user information endpoint used to generate claims. </summary>
+        </member>
+        <member name="T:Discord.OAuth2.DiscordMiddleware">
+            <summary> An ASP.NET Core middleware for authenticating users using Discord. </summary>
+        </member>
+        <member name="M:Discord.OAuth2.DiscordMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.AspNetCore.DataProtection.IDataProtectionProvider,Microsoft.Extensions.Logging.ILoggerFactory,System.Text.Encodings.Web.UrlEncoder,Microsoft.Extensions.Options.IOptions{Microsoft.AspNetCore.Authentication.SharedAuthenticationOptions},Microsoft.Extensions.Options.IOptions{Discord.OAuth2.DiscordOptions})">
+            <summary> Initializes a new <see cref="T:Discord.OAuth2.DiscordMiddleware"/>. </summary>
+            <param name="next">The next middleware in the HTTP pipeline to invoke.</param>
+            <param name="dataProtectionProvider"></param>
+            <param name="loggerFactory"></param>
+            <param name="encoder"></param>
+            <param name="sharedOptions"></param>
+            <param name="options">Configuration options for the middleware.</param>
+        </member>
+        <member name="M:Discord.OAuth2.DiscordMiddleware.CreateHandler">
+            <summary> Provides the <see cref="T:Microsoft.AspNetCore.Authentication.AuthenticationHandler`1"/> object for processing authentication-related requests. </summary>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Authentication.AuthenticationHandler`1"/> configured with the <see cref="T:Discord.OAuth2.DiscordOptions"/> supplied to the constructor.</returns>
+        </member>
+        <member name="T:Discord.OAuth2.DiscordOptions">
+            <summary> Configuration options for <see cref="T:Discord.OAuth2.DiscordMiddleware"/>. </summary>
+        </member>
+        <member name="M:Discord.OAuth2.DiscordOptions.#ctor">
+            <summary> Initializes a new <see cref="T:Discord.OAuth2.DiscordOptions"/>. </summary>
+        </member>
+        <member name="P:Discord.OAuth2.DiscordOptions.AppId">
+            <summary> Gets or sets the Discord-assigned appId. </summary>
+        </member>
+        <member name="P:Discord.OAuth2.DiscordOptions.AppSecret">
+            <summary> Gets or sets the Discord-assigned app secret. </summary>
+        </member>
+    </members>
+</doc>

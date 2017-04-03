@@ -1,0 +1,12 @@
+﻿<Project ToolsVersion="15.0" Sdk="Microsoft.NET.Sdk" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="../../Discord.Net.targets" />
+  <PropertyGroup>
+    <AssemblyName>Discord.Net.Commands</AssemblyName>
+    <RootNamespace>Discord.Commands</RootNamespace>
+    <Description>A Discord.Net extension adding support for bot commands.</Description>
+    <TargetFrameworks>netstandard1.1;netstandard1.3</TargetFrameworks>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Discord.Net.Core\Discord.Net.Core.csproj" />
+  </ItemGroup>
+</Project>
