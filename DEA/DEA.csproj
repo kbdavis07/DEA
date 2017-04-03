@@ -271,6 +271,7 @@
     <Compile Include="DAL\Repository\BaseRepository.cs" />
     <Compile Include="DAL\Repository\GangRepository.cs" />
     <Compile Include="DAL\Repository\GuildRepository.cs" />
+    <Compile Include="DAL\Repository\MuteRepository.cs" />
     <Compile Include="Models\Gang.cs" />
     <Compile Include="Models\Guild.cs" />
     <Compile Include="Models\ModRole.cs" />
