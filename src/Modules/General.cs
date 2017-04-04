@@ -1,0 +1,297 @@
+﻿using Discord;
+using Discord.Commands;
+using System;
+using System.Threading.Tasks;
+using DEA.Database.Models;
+using DEA.Database.Repository;
+using System.Linq;
+using Discord.WebSocket;
+using System.Collections.Generic;
+
+namespace DEA.Modules
+{
+    public class General : ModuleBase<SocketCommandContext>
+    {
+        [Command("Investments")]
+        [Alias("Investements", "Investement", "Investment")]
+        [Summary("Increase your money per message")]
+        [Remarks("Investments [investment]")]
+        [RequireBotPermission(GuildPermission.EmbedLinks)]
+        public async Task Invest(string investString = null)
+        {
+            var guild = await GuildRepository.FetchGuildAsync(Context.Guild.Id);
+            var user = await UserRepository.FetchUserAsync(Context);
+            double cash = user.Cash;
+            switch (investString)
+            {
+                case "line":
+                    if (Config.LINE_COST > cash)
+                    {
+                        await ReplyAsync($"{Context.User.Mention}, you do not have enough money. Balance: {cash.ToString("C", Config.CI)}");
+                        break;
+                    }
+                    if (user.MessageCooldown == Config.LINE_COOLDOWN)
+                    {
+                        await ReplyAsync($"{Context.User.Mention}, you have already purchased this investment.");
+                        break;
+                    }
+                    await UserRepository.EditCashAsync(Context, -Config.LINE_COST);
+                    await UserRepository.ModifyAsync(x => { x.MessageCooldown = Config.LINE_COOLDOWN; return Task.CompletedTask; }, Context);
+                    await ReplyAsync($"{Context.User.Mention}, don't forget to wipe your nose when you are done with that line.");
+                    break;
+                case "pound":
+                case "lb":
+                    if (Config.POUND_COST > cash)
+                    {
+                        await ReplyAsync($"{Context.User.Mention}, you do not have enough money. Balance: {cash.ToString("C", Config.CI)}");
+                        break;
+                    }
+                    if (user.InvestmentMultiplier >= Config.POUND_MULTIPLIER)
+                    {
+                        await ReplyAsync($"{Context.User.Mention}, you already purchased this investment.");
+                        break;
+                    }
+                    await UserRepository.EditCashAsync(Context, -Config.POUND_COST);
+                    await UserRepository.ModifyAsync(x => { x.InvestmentMultiplier = Config.POUND_MULTIPLIER; return Task.CompletedTask; }, Context);
+                    await ReplyAsync($"{Context.User.Mention}, ***DOUBLE CASH SMACK DAB CENTER NIGGA!***");
+                    break;
+                case "kg":
+                case "kilo":
+                case "kilogram":
+                    if (Config.KILO_COST > cash)
+                    {
+                        await ReplyAsync($"{Context.User.Mention}, you do not have enough money. Balance: {cash.ToString("C", Config.CI)}");
+                        break;
+                    }
+                    if (user.InvestmentMultiplier != Config.POUND_MULTIPLIER)
+                    {
+                        await ReplyAsync($"{Context.User.Mention}, you must purchase the pound of cocaine investment before buying this one.");
+                        break;
+                    }
+                    if (user.InvestmentMultiplier >= Config.KILO_MULTIPLIER)
+                    {
+                        await ReplyAsync($"{Context.User.Mention}, you already purchased this investment.");
+                        break;
+                    }
+                    await UserRepository.EditCashAsync(Context, -Config.KILO_COST);
+                    await UserRepository.ModifyAsync(x => { x.InvestmentMultiplier = Config.KILO_MULTIPLIER; return Task.CompletedTask; }, Context);
+                    await ReplyAsync($"{Context.User.Mention}, only the black jews would actually enjoy 4$/msg.");
+                    break;
+                default:
+                    var builder = new EmbedBuilder()
+                    {
+                        Title = "Current Available Investments:",
+                        Color = new Color(0x0000FF),
+                        Description = ($"\n**Cost: {Config.LINE_COST}$** | Command: `{guild.Prefix}investments line` | Description: " +
+                        $"One line of blow. Seems like nothing, yet it's enough to lower the message cooldown from 30 to 25 seconds." +
+                        $"\n**Cost: {Config.POUND_COST}$** | Command: `{guild.Prefix}investments pound` | Description: " +
+                        $"This one pound of coke will double the amount of cash you get per message\n**Cost: {Config.KILO_COST}$** | Command: " +
+                        $"`{guild.Prefix}investments kilo` | Description: A kilo of cocaine is more than enough to " +
+                        $"quadruple your cash/message.\n These investments stack with the chatting multiplier. However, they do not stack with themselves."),
+                    };
+                    await ReplyAsync("", embed: builder);
+                    break;
+            }
+        }
+
+        [Command("Leaderboards")]
+        [Alias("lb", "rankings", "highscores", "leaderboard", "highscore")]
+        [Summary("View the richest Drug Traffickers.")]
+        [Remarks("Leaderboards")]
+        [RequireBotPermission(GuildPermission.EmbedLinks)]
+        public async Task Leaderboards()
+        {
+            var users = (await UserRepository.AllAsync(Context.Guild.Id)).OrderByDescending(x => x.Cash);
+            string message = "```asciidoc\n= The Richest Traffickers =\n";
+            int position = 1;
+            int longest = 0;
+
+            foreach (User user in users)
+            {
+                if (Context.Guild.GetUser((ulong)user.UserId) == null) continue;
+                if ($"{Context.Guild.GetUser((ulong)user.UserId)}".Length > longest) longest = $"{position}. {Context.Guild.GetUser((ulong)user.UserId)}".Length;
+                if (position >= Config.LEADERBOARD_CAP || users.Last().Id == user.Id)
+                {
+                    position = 1;
+                    break;
+                }
+                position++;
+            }
+
+            foreach (User user in users)
+            {
+                if (Context.Guild.GetUser((ulong)user.UserId) == null) continue;
+                message += $"{position}. {Context.Guild.GetUser((ulong)user.UserId)}".PadRight(longest + 2) +
+                           $" :: {user.Cash.ToString("C", Config.CI)}\n";
+                if (position >= Config.LEADERBOARD_CAP) break;
+                position++;
+            }
+
+            await ReplyAsync($"{message}```");
+        }
+
+        [Command("Rates")]
+        [Alias("highestrate", "ratehighscore", "bestrate", "highestrates", "ratelb", "rateleaderboards")]
+        [Summary("View the richest Drug Traffickers.")]
+        [Remarks("Rates")]
+        [RequireBotPermission(GuildPermission.EmbedLinks)]
+        public async Task Chatters()
+        {
+            var users = (await UserRepository.AllAsync(Context.Guild.Id)).OrderByDescending(x => x.TemporaryMultiplier);
+            string message = "```asciidoc\n= The Best Chatters =\n";
+            int position = 1;
+            int longest = 0;
+
+            SocketGuildUser user;
+            foreach (User dbUser in users)
+            {
+                user = Context.Guild.GetUser((ulong)dbUser.UserId);
+                if (user == null) continue;
+                if ($"{user}".Length > longest) longest = $"{position}. {user}".Length;
+                if (position >= Config.RATELB_CAP || users.Last().Id == dbUser.Id)
+                {
+                    position = 1;
+                    break;
+                }
+                position++;
+            }
+
+            foreach (User dbUser in users)
+            {
+                user = Context.Guild.GetUser((ulong)dbUser.UserId);
+                if (user == null) continue;
+                message += $"{position}. {Context.Guild.GetUser(user.Id)}".PadRight(longest + 2) +
+                           $" :: {dbUser.TemporaryMultiplier.ToString("N2")}\n";
+                if (position >= Config.RATELB_CAP) break;
+                position++;
+            }
+
+            await ReplyAsync($"{message}```");
+        }
+
+        [Command("Donate")]
+        [Alias("Sauce")]
+        [Summary("Sauce some cash to one of your mates.")]
+        [Remarks("Donate <@User> <Amount of cash>")]
+        public async Task Donate(IGuildUser userMentioned, double money)
+        {
+            var user = await UserRepository.FetchUserAsync(Context);
+            if (userMentioned.Id == Context.User.Id) throw new Exception("Hey kids! Look at that retard, he is trying to give money to himself!");
+            if (money < Config.DONATE_MIN) throw new Exception($"Lowest donation is {Config.DONATE_MIN}$.");
+            if (user.Cash < money) throw new Exception($"You do not have enough money. Balance: {user.Cash.ToString("C", Config.CI)}.");
+            await UserRepository.EditCashAsync(Context, -money);
+            double deaMoney = money * Config.DEA_CUT / 100;
+            await UserRepository.EditCashAsync(Context, userMentioned.Id, money - deaMoney);
+            await UserRepository.EditCashAsync(Context, Context.Guild.CurrentUser.Id, deaMoney);
+            await ReplyAsync($"Successfully donated {money.ToString("C", Config.CI)} to {userMentioned.Mention}. DEA has taken a {deaMoney.ToString("C", Config.CI)} cut out of this donation. Balance: {user.Cash.ToString("C", Config.CI)}.");
+        }
+
+        [Command("Rank")]
+        [Summary("View the detailed ranking information of any user.")]
+        [Remarks("Rank [@User]")]
+        [RequireBotPermission(GuildPermission.EmbedLinks)]
+        public async Task Rank(IGuildUser userToView = null)
+        {
+            userToView = userToView ?? Context.User as IGuildUser;
+            List<User> users = (await UserRepository.AllAsync(Context.Guild.Id)).OrderByDescending(x => x.Cash).ToList();
+            IRole rank = null;
+            rank = await RankHandler.FetchRank(Context);
+            var builder = new EmbedBuilder()
+            {
+                Title = $"Ranking of {userToView}",
+                Color = new Color(0x00AE86),
+                Description = $"Balance: {(await UserRepository.FetchUserAsync(Context)).Cash.ToString("C", Config.CI)}\n" +
+                              $"Position: #{users.FindIndex(x => x.UserId == userToView.Id) + 1}\n"
+            };
+            if (rank != null)
+                builder.Description += $"Rank: {rank.Mention}";
+            await ReplyAsync("", embed: builder);
+        }
+
+        [Command("Money")]
+        [Alias("Cash")]
+        [Summary("View the wealth of anyone.")]
+        [Remarks("Money [@User]")]
+        public async Task Money(IGuildUser userToView = null)
+        {
+            userToView = userToView ?? Context.User as IGuildUser;
+            await ReplyAsync($"{userToView}'s balance: {(await UserRepository.GetCashAsync(userToView.Id, Context.Guild.Id)).ToString("C", Config.CI)}.");
+        }
+
+        [Command("Ranks")]
+        [Summary("View all ranks.")]
+        [Remarks("Ranks")]
+        public async Task Ranks()
+        {
+            var guild = await GuildRepository.FetchGuildAsync(Context.Guild.Id);
+            var description = "";
+            foreach (var rank in guild.RankRoles.OrderBy(x => x.CashRequired))
+            {
+                var role = Context.Guild.GetRole((ulong)rank.RoleId);
+                if (role == null)
+                {
+                    guild.RankRoles.Remove(rank);
+                    await BaseRepository<Guild>.UpdateAsync(guild);
+                    continue;
+                }
+                description += $"{rank.CashRequired.ToString("C", Config.CI)} => {role.Mention}";
+            }
+            if (description.Length > 2048) throw new Exception("You have too many ranks to be able to use this command.");
+            var builder = new EmbedBuilder()
+            {
+                Title = "Ranks",
+                Color = new Color(0x00AE86),
+                Description = description
+            };
+            await ReplyAsync("", embed: builder);
+        }
+
+        [Command("ModRoles")]
+        [Alias("ModeratorRoles", "ModRole")]
+        [Summary("View all the moderator roles.")]
+        [Remarks("ModRoles")]
+        public async Task ModRoles()
+        {
+            var guild = await GuildRepository.FetchGuildAsync(Context.Guild.Id);
+            var description = "";
+            foreach (var modRole in guild.ModRoles.OrderBy(x => x.PermissionLevel))
+            {
+                var role = Context.Guild.GetRole((ulong)modRole.RoleId);
+                if (role == null)
+                {
+                    guild.ModRoles.Remove(modRole);
+                    await BaseRepository<Guild>.UpdateAsync(guild);
+                    continue;
+                }
+                description += $"{role.Mention}: Pemission level {modRole.PermissionLevel}";
+            }
+            if (description.Length > 2048) throw new Exception("You have too many mod roles to be able to use this command.");
+            var builder = new EmbedBuilder()
+            {
+                Title = "Moderator Roles",
+                Color = new Color(0x00AE86),
+                Description = description
+            };
+            await ReplyAsync("", embed: builder);
+        }
+
+        [Command("Rate")]
+        [Summary("View the money/message rate of anyone.")]
+        [Remarks("Rate [@User]")]
+        [RequireBotPermission(GuildPermission.EmbedLinks)]
+        public async Task Rate(IGuildUser userToView = null)
+        {
+            userToView = userToView ?? Context.User as IGuildUser;
+            var user = await UserRepository.FetchUserAsync(Context);
+            var builder = new EmbedBuilder()
+            {
+                Title = $"Rate of {userToView}",
+                Color = new Color(0x00AE86),
+                Description = $"Chatting multiplier: {user.TemporaryMultiplier.ToString("N2")}\n" +
+                $"Investment multiplier: {user.InvestmentMultiplier.ToString("N2")}\n" + 
+                $"Message cooldown: {user.MessageCooldown.TotalSeconds} seconds"
+            };
+            await ReplyAsync("", embed: builder);
+        }
+    }
+}
