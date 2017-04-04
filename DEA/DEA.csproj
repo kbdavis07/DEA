@@ -298,6 +298,7 @@
     <Compile Include="DAL\EF\Models\user.cs" />
     <Compile Include="DAL\Repository\BaseRepository.cs" />
     <Compile Include="DAL\Repository\GuildRepository.cs" />
+    <Compile Include="DAL\Repository\UserRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

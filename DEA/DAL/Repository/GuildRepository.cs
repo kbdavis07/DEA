@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using DEA.DAL.EF;
 
 namespace DEA.DAL.Repository
@@ -33,32 +34,13 @@ namespace DEA.DAL.Repository
             
             return ExistingGuild;
         }
-
-
-
-        //public static async Task<guild> FetchGuildAsync(ulong guildId)
-        //{
-        //    guild ExistingGuild = await BaseRepository<guild>.SearchFor(c => c.id == guildId).FirstOrDefaultAsync();
-
-        //    if (ExistingGuild == null)
-        //    {
-        //        var CreatedGuild = new guild()
-        //        {
-        //            id = guildId
-        //        };
-        //        await BaseRepository<guild>.InsertAsync(CreatedGuild);
-                
-        //        return CreatedGuild;
-        //    }
-        //    return ExistingGuild;
-        //}
-
-        //public static async Task ModifyAsync(Func<guild, Task> function, decimal guildId)
-        //{
-        //    var guild = await FetchGuildAsync(guildId);
-        //    await function(guild);
-        //    await BaseRepository<guild>.UpdateAsync(guild);
-        //}
+        
+        public static async Task ModifyAsync(Func<guild, Task> function, ulong guildId)
+        {
+            var guild = await FetchGuildByIdAsync(guildId);
+            await function(guild);
+            await BaseRepository<guild>.UpdateAsync(guild);
+        }
 
     }
 }
