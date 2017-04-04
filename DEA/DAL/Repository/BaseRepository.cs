@@ -8,8 +8,17 @@ using DEA.DAL.EF;
 
 namespace DEA.DAL.Repository
 {
-    public static class BaseRepository<TEntity> where TEntity : class
+    public class BaseRepository<TEntity> where TEntity : class
     {
+        DEAContext db = new DEAContext();
+
+
+        public IQueryable<TEntity> SearchFor(Expression<Func<TEntity, bool>> predicate)
+        {
+            return db.Set<TEntity>().Where(predicate);
+        }
+
+
 
         public static async Task InsertAsync(TEntity entity)
         {
@@ -41,13 +50,7 @@ namespace DEA.DAL.Repository
             }
         }
 
-        public static IQueryable<TEntity> SearchFor(Expression<Func<TEntity, bool>> predicate)
-        {
-            using (var db = new DEAContext())
-            {
-                return db.Set<TEntity>().Where(predicate);
-            }
-        }
+      
 
         public static IQueryable<TEntity> GetAll()
         {
